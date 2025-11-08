@@ -176,12 +176,12 @@
 <nav aria-label="3. Admin Business Use Case" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#use-case-manage-doctor-data">
+<a class="md-nav__link" href="#manage-doctor-data">
 <span class="md-ellipsis">
-      Use Case: Manage Doctor Data
+      Manage Doctor Data
     </span>
 </a>
-<nav aria-label="Use Case: Manage Doctor Data" class="md-nav">
+<nav aria-label="Manage Doctor Data" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#failure-handling-in-admin-workflow">
@@ -205,19 +205,12 @@
 <nav aria-label="4. Doctor Business Use Cases" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#use-case-1-manage-available-time-slots">
+<a class="md-nav__link" href="#manage-appointments-and-available-time-slots">
 <span class="md-ellipsis">
-      Use Case 1: Manage Available Time Slots
+      Manage Appointments and Available Time Slots
     </span>
 </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#use-case-2-approve-or-reject-appointments">
-<span class="md-ellipsis">
-      Use Case 2: Approve or Reject Appointments
-    </span>
-</a>
-<nav aria-label="Use Case 2: Approve or Reject Appointments" class="md-nav">
+<nav aria-label="Manage Appointments and Available Time Slots" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#failure-handling-in-doctor-workflow">
@@ -241,9 +234,9 @@
 <nav aria-label="5. Patient Business Use Case" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#use-case-book-cancel-appointment">
+<a class="md-nav__link" href="#book-cancel-appointment">
 <span class="md-ellipsis">
-      Use Case: Book &amp; Cancel Appointment
+      Book &amp; Cancel Appointment
     </span>
 </a>
 </li>
@@ -318,12 +311,12 @@
 <nav aria-label="3. Admin Business Use Case" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#use-case-manage-doctor-data">
+<a class="md-nav__link" href="#manage-doctor-data">
 <span class="md-ellipsis">
-      Use Case: Manage Doctor Data
+      Manage Doctor Data
     </span>
 </a>
-<nav aria-label="Use Case: Manage Doctor Data" class="md-nav">
+<nav aria-label="Manage Doctor Data" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#failure-handling-in-admin-workflow">
@@ -347,19 +340,12 @@
 <nav aria-label="4. Doctor Business Use Cases" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#use-case-1-manage-available-time-slots">
+<a class="md-nav__link" href="#manage-appointments-and-available-time-slots">
 <span class="md-ellipsis">
-      Use Case 1: Manage Available Time Slots
+      Manage Appointments and Available Time Slots
     </span>
 </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#use-case-2-approve-or-reject-appointments">
-<span class="md-ellipsis">
-      Use Case 2: Approve or Reject Appointments
-    </span>
-</a>
-<nav aria-label="Use Case 2: Approve or Reject Appointments" class="md-nav">
+<nav aria-label="Manage Appointments and Available Time Slots" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#failure-handling-in-doctor-workflow">
@@ -383,9 +369,9 @@
 <nav aria-label="5. Patient Business Use Case" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#use-case-book-cancel-appointment">
+<a class="md-nav__link" href="#book-cancel-appointment">
 <span class="md-ellipsis">
-      Use Case: Book &amp; Cancel Appointment
+      Book &amp; Cancel Appointment
     </span>
 </a>
 </li>
@@ -439,25 +425,25 @@ It replaces manual appointment handling with an automated and transparent workfl
 <tbody>
 <tr>
 <td>Admin</td>
-<td>Manage system setup</td>
+<td>Manage Doctor Data</td>
 <td>Handles doctor registration and database maintenance</td>
 <td>Ensures smooth operations</td>
 </tr>
 <tr>
 <td>Doctor</td>
-<td>Manage clinic appointments</td>
+<td>Manage Available Time Slots and Approve or Reject Appointments</td>
 <td>Creates slots, reviews requests, and manages appointments</td>
 <td>Saves time and improves scheduling</td>
 </tr>
 <tr>
 <td>Patient</td>
-<td>Book and manage appointments</td>
+<td>Book &amp; Cancel Appointment</td>
 <td>Registers, books, or cancels appointments online</td>
 <td>Provides flexibility and convenience</td>
 </tr>
 </tbody>
 </table>
-<h2 id="business-rules">Business Rules</h2>
+<h2 id="business-rules"><strong>Business Rules</strong></h2>
 <ol>
 <li>Each appointment must be associated with one registered doctor and one registered patient.  </li>
 <li>A doctor cannot approve overlapping appointments or create duplicate time slots.   </li>
@@ -469,7 +455,7 @@ It replaces manual appointment handling with an automated and transparent workfl
 <li>All appointment and slot operations must be recorded in the activity logs for audit and consistency.  </li>
 </ol>
 <h2 id="3-admin-business-use-case"><strong>3. Admin Business Use Case</strong></h2>
-<h3 id="use-case-manage-doctor-data"><strong>Use Case: Manage Doctor Data</strong></h3>
+<h3 id="manage-doctor-data"><strong>Manage Doctor Data</strong></h3>
 <p><strong>Goal:</strong> Admin maintains doctor records.<br/>
 <strong>Trigger:</strong> Admin logs into the admin dashboard.<br/>
 <strong>Outcome:</strong> Data updated securely in the database.</p>
@@ -524,34 +510,14 @@ It replaces manual appointment handling with an automated and transparent workfl
 </tbody>
 </table>
 <h2 id="4-doctor-business-use-cases">4. <strong>Doctor Business Use Cases</strong></h2>
-<h3 id="use-case-1-manage-available-time-slots"><strong>Use Case 1: Manage Available Time Slots</strong></h3>
-<ul>
-<li><strong>Goal:</strong><br/>
-  The doctor wants to create, update, or remove available consultation time slots for patients.  </li>
-<li><strong>Trigger:</strong><br/>
-  The doctor logs into the system and opens the “Slot Management” panel from the dashboard.  </li>
-<li><strong>Outcome:</strong><br/>
-  The system validates and saves the defined slots in the database, making them visible to patients for booking.<br/>
-  If an error occurs (invalid slot details or database failure), the system displays an error message and rolls back changes.</li>
-</ul>
-<h3 id="use-case-2-approve-or-reject-appointments"><strong>Use Case 2: Approve or Reject Appointments</strong></h3>
-<ul>
-<li>
+<h3 id="manage-appointments-and-available-time-slots"><strong>Manage Appointments and Available Time Slots</strong></h3>
 <p><strong>Goal:</strong><br/>
-  The doctor wants to review patient appointment requests and decide whether to approve, reject, or reschedule them based on availability and priority tasks.</p>
-</li>
-<li>
+To enable doctors to efficiently manage their consultation schedules by creating, updating, or deleting available time slots and handling patient appointment requests through approval, rejection, or rescheduling.</p>
 <p><strong>Trigger:</strong><br/>
-  New appointment requests appear on the doctor’s dashboard.</p>
-</li>
-<li>
-<p><strong>Outcome:</strong> </p>
-</li>
-<li>If <strong>no priority task</strong> exists at the requested time, the doctor approves the appointment.  </li>
-<li>If a <strong>priority task</strong> (e.g., emergency or meeting) exists, the doctor rejects the request, and the system automatically suggests alternative time slots to the patient.  </li>
-<li>All updates are reflected in the database, and the patient is notified.  </li>
-<li>In case of database or network failure, the transaction is rolled back and the doctor is alerted.</li>
-</ul>
+The doctor logs into the MediLink system and accesses the dashboard, which displays the “Slot Management” panel and pending appointment requests from patients.</p>
+<p><strong>Outcome:</strong><br/>
+The system validates and stores the doctor’s time slots in the database, making them visible to patients for booking.<br/>
+Doctors can review and respond to appointment requests. Approved requests are confirmed, rejected ones trigger automated slot suggestions for patients, and all changes are updated in real time across the system.</p>
 <div class="mermaid">flowchart TD
     A["Doctor Logs Into System"] --&gt; B["Access Dashboard"]
 
@@ -632,7 +598,7 @@ The table below outlines possible failure points, the system’s response, and t
 </tbody>
 </table>
 <h2 id="5-patient-business-use-case"><strong>5. Patient Business Use Case</strong></h2>
-<h3 id="use-case-book-cancel-appointment"><strong>Use Case: Book &amp; Cancel Appointment</strong></h3>
+<h3 id="book-cancel-appointment"><strong>Book &amp; Cancel Appointment</strong></h3>
 <ul>
 <li>
 <p><strong>Goal</strong></p>

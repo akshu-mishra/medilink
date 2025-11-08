@@ -12,11 +12,11 @@ It replaces manual appointment handling with an automated and transparent workfl
 
 | Role | Business Objective | Description | Value to Business |
 |-------|--------------------|--------------|-------------------|
-| Admin | Manage system setup | Handles doctor registration and database maintenance | Ensures smooth operations |
-| Doctor | Manage clinic appointments | Creates slots, reviews requests, and manages appointments | Saves time and improves scheduling |
-| Patient | Book and manage appointments | Registers, books, or cancels appointments online | Provides flexibility and convenience |
+| Admin | Manage Doctor Data | Handles doctor registration and database maintenance | Ensures smooth operations |
+| Doctor | Manage Available Time Slots and Approve or Reject Appointments| Creates slots, reviews requests, and manages appointments | Saves time and improves scheduling |
+| Patient | Book & Cancel Appointment | Registers, books, or cancels appointments online | Provides flexibility and convenience |
 
-## Business Rules
+## **Business Rules**
 
 1. Each appointment must be associated with one registered doctor and one registered patient.  
 2. A doctor cannot approve overlapping appointments or create duplicate time slots.   
@@ -31,7 +31,7 @@ It replaces manual appointment handling with an automated and transparent workfl
 
 ## **3. Admin Business Use Case**
 
-### **Use Case: Manage Doctor Data**
+### **Manage Doctor Data**
 **Goal:** Admin maintains doctor records.  
 **Trigger:** Admin logs into the admin dashboard.  
 **Outcome:** Data updated securely in the database.
@@ -62,29 +62,17 @@ The following table describes the possible failure scenarios during Admin operat
 | **Unexpected exception** | FastAPI logs the error and returns a standardized response. | *“Something went wrong. Please contact the system administrator.”* |
 
 ## 4. **Doctor Business Use Cases**
-### **Use Case 1: Manage Available Time Slots**
-- **Goal:**  
-  The doctor wants to create, update, or remove available consultation time slots for patients.  
-- **Trigger:**  
-  The doctor logs into the system and opens the “Slot Management” panel from the dashboard.  
-- **Outcome:**  
-  The system validates and saves the defined slots in the database, making them visible to patients for booking.  
-  If an error occurs (invalid slot details or database failure), the system displays an error message and rolls back changes.
+### **Manage Appointments and Available Time Slots**
 
+**Goal:**  
+To enable doctors to efficiently manage their consultation schedules by creating, updating, or deleting available time slots and handling patient appointment requests through approval, rejection, or rescheduling.
 
-### **Use Case 2: Approve or Reject Appointments**
+**Trigger:**  
+The doctor logs into the MediLink system and accesses the dashboard, which displays the “Slot Management” panel and pending appointment requests from patients.
 
-- **Goal:**  
-  The doctor wants to review patient appointment requests and decide whether to approve, reject, or reschedule them based on availability and priority tasks.
-
-- **Trigger:**  
-  New appointment requests appear on the doctor’s dashboard.
-
-- **Outcome:**  
-   - If **no priority task** exists at the requested time, the doctor approves the appointment.  
-   - If a **priority task** (e.g., emergency or meeting) exists, the doctor rejects the request, and the system automatically suggests alternative time slots to the patient.  
-   - All updates are reflected in the database, and the patient is notified.  
-   - In case of database or network failure, the transaction is rolled back and the doctor is alerted.
+**Outcome:**  
+The system validates and stores the doctor’s time slots in the database, making them visible to patients for booking.  
+Doctors can review and respond to appointment requests. Approved requests are confirmed, rejected ones trigger automated slot suggestions for patients, and all changes are updated in real time across the system.
 
 
 ```mermaid
@@ -140,7 +128,7 @@ The table below outlines possible failure points, the system’s response, and t
 
 ## **5. Patient Business Use Case**
 
-### **Use Case: Book & Cancel Appointment**
+### **Book & Cancel Appointment**
 
 - **Goal**
     - To allow the patient to book, manage, or cancel their appointments conveniently through the MediLink system, ensuring smooth scheduling and updated availability.

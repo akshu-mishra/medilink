@@ -13,7 +13,7 @@ Each function from appointment scheduling to data validation is automated to ens
 | **FUC-04** | Book Appointment | Patient | Select a doctor and time slot to request an appointment. | Request saved as “Pending.” |
 | **FUC-05** | Approve/Reject Appointment | Doctor | Approve, reject, or reschedule patient requests. | Appointment status updated. |
 | **FUC-06** | Cancel Appointment | Patient | Cancel previously booked appointments. | Slot becomes available again. |
-| **FUC-08** | Logout | All Users | End active session securely. | Session terminated, user redirected to login. |
+| **FUC-07** | Logout | All Users | End active session securely. | Session terminated, user redirected to login. |
 
 ## **3. FUC-01 – User Authentication**
 **Description**

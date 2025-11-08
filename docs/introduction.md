@@ -2,9 +2,7 @@
 
 ## **1. Introduction**
 
-The **MediLink Appointment Management System** is a digital platform developed for clinics or individual doctors to manage appointments efficiently.  
-It connects **Admins**, **Doctors**, and **Patients** within a unified system, automating tasks such as booking, slot management, and appointment tracking.
-
+The **MediLink Appointment Management System** is a digital platform developed for clinics or individual doctors to manage appointments efficiently. It connects **Admins**, **Doctors**, and **Patients** within a unified system, automating tasks such as booking, slot management, and appointment tracking.
 This system replaces traditional manual scheduling with a modern web-based and mobile-compatible **Progressive Web Application (PWA)**.  
 By integrating **FastAPI** for backend logic and **PostgreSQL** for secure data storage, MediLink ensures high performance, consistency, and scalability.
 
@@ -14,10 +12,10 @@ By integrating **FastAPI** for backend logic and **PostgreSQL** for secure data 
 In many small and medium-sized clinics, appointments are managed manually through phone calls or written registers.  
 This process often leads to:
 
-- Double bookings and scheduling conflicts.  
-- Delays in communication between patients and doctors.  
-- Lack of real-time slot availability.  
-- Paper-based data storage prone to errors and data loss.  
+ - Double bookings and scheduling conflicts.  
+ - Delays in communication between patients and doctors.  
+ - Lack of real-time slot availability.  
+ - Paper-based data storage prone to errors and data loss.  
 
 To overcome these challenges, **MediLink** introduces a **digital transformation of clinic operations**.  
 It automates appointment booking, provides real-time updates, and offers remote access for patients through a secure and responsive platform.
@@ -82,7 +80,7 @@ flowchart TD
 | Version Control | Git, GitHub |
 | Documentation | MkDocs Material |
 
-## System Functionalities
+## Features
 
 | **Functionality** | **Description** |
 |--------------------|-----------------|

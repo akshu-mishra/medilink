@@ -7,15 +7,6 @@ These use cases describe how each stakeholder (Admin, Doctor, and Patient) inter
 
 MediLink simplifies clinic operations by connecting doctors, patients, and system administrators through a single digital platform.  
 It replaces manual appointment handling with an automated and transparent workflow, improving efficiency, accuracy, and patient satisfaction.
-
-## **2. Business Use Case Summary**
-
-| Role | Business Objective | Description | Value to Business |
-|-------|--------------------|--------------|-------------------|
-| Admin | Manage Doctor Data | Handles doctor registration and database maintenance | Ensures smooth operations |
-| Doctor | Manage Available Time Slots and Approve or Reject Appointments| Creates slots, reviews requests, and manages appointments | Saves time and improves scheduling |
-| Patient | Book & Cancel Appointment | Registers, books, or cancels appointments online | Provides flexibility and convenience |
-
 ## **Business Rules**
 
 1. Each appointment must be associated with one registered doctor and one registered patient.  
@@ -26,7 +17,17 @@ It replaces manual appointment handling with an automated and transparent workfl
 6. If a request remains unapproved within 30 minutes of the slot, the system automatically sends a suggestion message to the patient with alternative doctors and available slots.  
 7. The system must automatically update appointment status upon approval, rejection, or cancellation.  
 8. All appointment and slot operations must be recorded in the activity logs for audit and consistency.  
+9. If a doctor has pre-scheduled appointments but leaves the hospital due to any issue, another available doctor will take over the appointments for that time slot, and the patient will be notified through the app. The patient will have the option to cancel the appointment if they do not wish to continue with the substitute doctor.  
  
+
+## **2. Business Use Case Summary**
+
+| Role | Business Objective | Description | Value to Business |
+|-------|--------------------|--------------|-------------------|
+| Admin | Manage Doctor Data | Handles doctor registration and database maintenance | Ensures smooth operations |
+| Doctor | Manage Available Time Slots and Approve or Reject Appointments| Creates slots, reviews requests, and manages appointments | Saves time and improves scheduling |
+| Patient | Book & Cancel Appointment | Registers, books, or cancels appointments online | Provides flexibility and convenience |
+
 
 
 ## **3. Admin Business Use Case**

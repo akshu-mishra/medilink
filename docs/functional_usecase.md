@@ -70,10 +70,37 @@ flowchart TD
     A["Patient Logs In"] --> B["Views Doctor List"]
     B --> C["Select Doctor & Available Slot"]
     C --> D["Click 'Book Appointment'"]
-    D --> E["System Saves Request with Status = Pending"]
+    D --> E["System Saves Request with Status = Pending and slot color = Yellow"]
     E --> F["Doctor Receives Notification"]
     F --> G["Patient Receives Confirmation Message"]
 ```
+
+### **Slot Visualization and Booking Behavior**
+
+To ensure a smooth, conflict-free appointment booking process, the MediLink system implements a color-coded slot visualization mechanism.  
+Each color represents a distinct slot status and dynamically changes based on user and system actions.
+
+| **Color** | **Slot Status** | **Description / System Behavior** |
+|------------|----------------|-----------------------------------|
+| ⚪ White | Available | Slot is open for booking and visible to all patients. |
+| 🟡 Yellow | Pending | Slot has been booked by a patient but is awaiting doctor approval. The slot is hidden from other patients to prevent duplicate booking. |
+| 🟢 Green | Confirmed | Appointment has been approved by the doctor. The slot remains visible only to the patient who booked it. |
+| ⚫ Grey | Doctor Busy / Rejected | Slot becomes unavailable because the doctor rejected the request or marked themselves busy. The slot is hidden from all patients during this period. |
+
+**Behavioral Rules:**
+
+1. When a slot is created, it appears **White (Available)** to all patients.  
+2. Once a patient books a slot, it turns **Yellow (Pending)** and becomes **hidden from other patients** until a decision is made.  
+3. If the doctor **approves** the appointment, the slot turns **Green (Confirmed)** and remains visible only to the patient who booked it.  
+4. If the doctor **rejects** the appointment, the slot turns **Grey (Busy)**, indicating that it’s currently unavailable due to doctor constraints or scheduling conflicts.  
+5. If the **patient cancels** a booked appointment, the slot automatically reverts to **White (Available)** and becomes visible to all patients again.  
+6. When a doctor marks themselves as **Busy**, all related slots appear **Grey (Busy)** and are temporarily disabled for booking.  
+7. If a slot remains **unapproved within 30 minutes of the scheduled time**, the system automatically suggests alternative available slots or doctors to the patient.
+
+This approach ensures clear communication of slot status, prevents double booking, and maintains transparency for both patients and doctors.
+
+
+
 ### **Error Handling**
 
 | **Failure Case** | **System Action** | **Message Displayed** |
@@ -90,10 +117,10 @@ flowchart TD
     A["Doctor Opens Dashboard"] --> B["Views Pending Requests"]
     B --> C{"Any Conflicts or Priorities?"}
     C -->|No| D["Approve Appointment"]
-    C -->|Yes| E["Reject or Suggest New Slot"]
-    D --> F["Update Status = Approved"]
-    E --> G["Update Status = Rejected / Rescheduled"]
-    F --> H["Notify Patient"]
+    C -->|Yes| E["Reject and Suggest New Slot"]
+    D --> F["Update Status = Approved and Patient side slot color = Green"]
+    E --> G["Update Status = Rejected / Rescheduled and slot color = Grey (BUSY)"]
+    F --> H["Update Patient"]
     G --> H
     H --> I["Appointment List Updated in DB"]
 ```
@@ -105,10 +132,10 @@ flowchart TD
     A["Patient Opens Appointment List"] --> B["Select Appointment to Cancel"]
     B --> C["Click 'Cancel'"]
     C --> D["System Updates Status = Cancelled"]
-    D --> E["Slot Released to Database"]
-    E --> F["Doctor Notified"]
+    D --> E["Slot Released to Database and again available to all patient for booking with color = White"]
+    E --> F["Update Doctor"]
     F --> G["Patient Sees Updated Schedule"]
 ```
 ## **8. Summary**
-MediLink’s functional use cases provide the backbone of the system, enabling smooth user–system interactions through secure, validated, and automated processes.
-Each function directly supports a corresponding business use case, ensuring that operational goals — such as improved efficiency, reduced workload, and better patient satisfaction — are achieved through reliable technical execution.
+MediLink’s functional use cases provide the backbone of the system, enabling smooth user system interactions through secure, validated, and automated processes.
+Each function directly supports a corresponding business use case, ensuring that operational goals such as improved efficiency, reduced workload, and better patient satisfaction are achieved through reliable technical execution.

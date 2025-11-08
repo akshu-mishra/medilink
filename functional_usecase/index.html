@@ -198,6 +198,13 @@
 <nav aria-label="5. FUC-04 – Book Appointment (Patient)" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#slot-visualization-and-booking-behavior">
+<span class="md-ellipsis">
+      Slot Visualization and Booking Behavior
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#error-handling">
 <span class="md-ellipsis">
       Error Handling
@@ -311,6 +318,13 @@
 </a>
 <nav aria-label="5. FUC-04 – Book Appointment (Patient)" class="md-nav">
 <ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#slot-visualization-and-booking-behavior">
+<span class="md-ellipsis">
+      Slot Visualization and Booking Behavior
+    </span>
+</a>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#error-handling">
 <span class="md-ellipsis">
@@ -492,10 +506,55 @@ The system stores it as “Pending” until reviewed by the doctor.</p>
     A["Patient Logs In"] --&gt; B["Views Doctor List"]
     B --&gt; C["Select Doctor &amp; Available Slot"]
     C --&gt; D["Click 'Book Appointment'"]
-    D --&gt; E["System Saves Request with Status = Pending"]
+    D --&gt; E["System Saves Request with Status = Pending and slot color = Yellow"]
     E --&gt; F["Doctor Receives Notification"]
     F --&gt; G["Patient Receives Confirmation Message"]
 </div>
+<h3 id="slot-visualization-and-booking-behavior"><strong>Slot Visualization and Booking Behavior</strong></h3>
+<p>To ensure a smooth, conflict-free appointment booking process, the MediLink system implements a color-coded slot visualization mechanism.<br/>
+Each color represents a distinct slot status and dynamically changes based on user and system actions.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Color</strong></th>
+<th><strong>Slot Status</strong></th>
+<th><strong>Description / System Behavior</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>⚪ White</td>
+<td>Available</td>
+<td>Slot is open for booking and visible to all patients.</td>
+</tr>
+<tr>
+<td>🟡 Yellow</td>
+<td>Pending</td>
+<td>Slot has been booked by a patient but is awaiting doctor approval. The slot is hidden from other patients to prevent duplicate booking.</td>
+</tr>
+<tr>
+<td>🟢 Green</td>
+<td>Confirmed</td>
+<td>Appointment has been approved by the doctor. The slot remains visible only to the patient who booked it.</td>
+</tr>
+<tr>
+<td>⚫ Grey</td>
+<td>Doctor Busy / Rejected</td>
+<td>Slot becomes unavailable because the doctor rejected the request or marked themselves busy. The slot is hidden from all patients during this period.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Behavioral Rules:</strong></p>
+<ol>
+<li>When a slot is created, it appears <strong>White (Available)</strong> to all patients.  </li>
+<li>Once a patient books a slot, it turns <strong>Yellow (Pending)</strong> and becomes <strong>hidden from other patients</strong> until a decision is made.  </li>
+<li>If the doctor <strong>approves</strong> the appointment, the slot turns <strong>Green (Confirmed)</strong> and remains visible only to the patient who booked it.  </li>
+<li>If the doctor <strong>rejects</strong> the appointment, the slot turns <strong>Grey (Busy)</strong>, indicating that it’s currently unavailable due to doctor constraints or scheduling conflicts.  </li>
+<li>If the <strong>patient cancels</strong> a booked appointment, the slot automatically reverts to <strong>White (Available)</strong> and becomes visible to all patients again.  </li>
+<li>When a doctor marks themselves as <strong>Busy</strong>, all related slots appear <strong>Grey (Busy)</strong> and are temporarily disabled for booking.  </li>
+<li>If a slot remains <strong>unapproved within 30 minutes of the scheduled time</strong>, the system automatically suggests alternative available slots or doctors to the patient.</li>
+</ol>
+<p>This approach ensures clear communication of slot status, prevents double booking, and maintains transparency for both patients and doctors.</p>
 <h3 id="error-handling"><strong>Error Handling</strong></h3>
 <table>
 <thead>
@@ -530,10 +589,10 @@ Doctors review incoming requests and either approve, reject, or suggest new timi
     A["Doctor Opens Dashboard"] --&gt; B["Views Pending Requests"]
     B --&gt; C{"Any Conflicts or Priorities?"}
     C --&gt;|No| D["Approve Appointment"]
-    C --&gt;|Yes| E["Reject or Suggest New Slot"]
-    D --&gt; F["Update Status = Approved"]
-    E --&gt; G["Update Status = Rejected / Rescheduled"]
-    F --&gt; H["Notify Patient"]
+    C --&gt;|Yes| E["Reject and Suggest New Slot"]
+    D --&gt; F["Update Status = Approved and Patient side slot color = Green"]
+    E --&gt; G["Update Status = Rejected / Rescheduled and slot color = Grey (BUSY)"]
+    F --&gt; H["Update Patient"]
     G --&gt; H
     H --&gt; I["Appointment List Updated in DB"]
 </div>
@@ -544,13 +603,13 @@ Patient cancels a scheduled appointment before consultation.</p>
     A["Patient Opens Appointment List"] --&gt; B["Select Appointment to Cancel"]
     B --&gt; C["Click 'Cancel'"]
     C --&gt; D["System Updates Status = Cancelled"]
-    D --&gt; E["Slot Released to Database"]
-    E --&gt; F["Doctor Notified"]
+    D --&gt; E["Slot Released to Database and again available to all patient for booking with color = White"]
+    E --&gt; F["Update Doctor"]
     F --&gt; G["Patient Sees Updated Schedule"]
 </div>
 <h2 id="8-summary"><strong>8. Summary</strong></h2>
-<p>MediLink’s functional use cases provide the backbone of the system, enabling smooth user–system interactions through secure, validated, and automated processes.
-Each function directly supports a corresponding business use case, ensuring that operational goals — such as improved efficiency, reduced workload, and better patient satisfaction — are achieved through reliable technical execution.</p>
+<p>MediLink’s functional use cases provide the backbone of the system, enabling smooth user system interactions through secure, validated, and automated processes.
+Each function directly supports a corresponding business use case, ensuring that operational goals such as improved efficiency, reduced workload, and better patient satisfaction are achieved through reliable technical execution.</p>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>

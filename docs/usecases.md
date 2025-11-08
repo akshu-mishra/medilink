@@ -1,12 +1,13 @@
 # **Business Use Cases**
 
-This section defines the business-level use cases of the MediLink Appointment System.  
+This section defines the business-level use cases of the MediLink Doctor Appointment System.  
 These use cases describe how each stakeholder (Admin, Doctor, and Patient) interacts with the system to fulfill their operational objectives and contribute to efficient clinic management.
 
 ## **1. Business Context**
 
 MediLink simplifies clinic operations by connecting doctors, patients, and system administrators through a single digital platform.  
 It replaces manual appointment handling with an automated and transparent workflow, improving efficiency, accuracy, and patient satisfaction.
+
 ## **Business Rules**
 
 1. Each appointment must be associated with one registered doctor and one registered patient.  
@@ -56,10 +57,10 @@ The following table describes the possible failure scenarios during Admin operat
 
 | **Failure Type** | **System Action** | **Outcome / User Notification** |
 |------------------|-------------------|----------------------------------|
-| **Database error (commit failed)** | Transaction is rolled back in FastAPI. | No partial data is saved; Admin sees an error message like *“Database update failed.”* |
+| **Database error (commit failed)** | Transaction is rolled back in FastAPI. | No partial data is saved. Admin sees an error message like *“Database update failed.”* |
 | **Validation error (invalid data)** | Backend validation logic rejects input. | Admin is prompted: *“Please enter valid details.”* |
 | **Network or server issue** | Request fails safely, frontend retries or shows an alert. | Admin sees a message: *“Unable to connect to server. Try again later.”* |
-| **Authentication issue** | Session expires; backend returns HTTP 401. | Admin is redirected to the login screen. |
+| **Authentication issue** | Session expires, backend returns HTTP 401. | Admin is redirected to the login screen. |
 | **Unexpected exception** | FastAPI logs the error and returns a standardized response. | *“Something went wrong. Please contact the system administrator.”* |
 
 ## 4. **Doctor Business Use Cases**

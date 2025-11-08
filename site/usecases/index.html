@@ -407,7 +407,7 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="business-use-cases"><strong>Business Use Cases</strong></h1>
-<p>This section defines the business-level use cases of the MediLink Appointment System.<br/>
+<p>This section defines the business-level use cases of the MediLink Doctor Appointment System.<br/>
 These use cases describe how each stakeholder (Admin, Doctor, and Patient) interacts with the system to fulfill their operational objectives and contribute to efficient clinic management.</p>
 <h2 id="1-business-context"><strong>1. Business Context</strong></h2>
 <p>MediLink simplifies clinic operations by connecting doctors, patients, and system administrators through a single digital platform.<br/>
@@ -486,7 +486,7 @@ It replaces manual appointment handling with an automated and transparent workfl
 <tr>
 <td><strong>Database error (commit failed)</strong></td>
 <td>Transaction is rolled back in FastAPI.</td>
-<td>No partial data is saved; Admin sees an error message like <em>“Database update failed.”</em></td>
+<td>No partial data is saved. Admin sees an error message like <em>“Database update failed.”</em></td>
 </tr>
 <tr>
 <td><strong>Validation error (invalid data)</strong></td>
@@ -500,7 +500,7 @@ It replaces manual appointment handling with an automated and transparent workfl
 </tr>
 <tr>
 <td><strong>Authentication issue</strong></td>
-<td>Session expires; backend returns HTTP 401.</td>
+<td>Session expires, backend returns HTTP 401.</td>
 <td>Admin is redirected to the login screen.</td>
 </tr>
 <tr>

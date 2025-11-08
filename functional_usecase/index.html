@@ -523,27 +523,27 @@ Each color represents a distinct slot status and dynamically changes based on us
 <tr>
 <td>🟡 Yellow</td>
 <td>Pending</td>
-<td>Slot has been booked by a patient but is awaiting doctor approval. The slot is hidden from other patients to prevent duplicate booking.</td>
+<td>Slot has been booked by a patient but is awaiting doctor approval.</td>
 </tr>
 <tr>
 <td>🟢 Green</td>
 <td>Confirmed</td>
-<td>Appointment has been approved by the doctor. The slot remains visible only to the patient who booked it.</td>
+<td>Appointment has been approved by the doctor.</td>
 </tr>
 <tr>
 <td>⚫ Grey</td>
 <td>Doctor Busy / Rejected</td>
-<td>Slot becomes unavailable because the doctor rejected the request or marked themselves busy. The slot is hidden from all patients during this period.</td>
+<td>Slot becomes unavailable because the doctor rejected the request or marked themselves busy.</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Behavioral Rules:</strong></p>
 <ol>
 <li>When a slot is created, it appears <strong>White (Available)</strong> to all patients.  </li>
-<li>Once a patient books a slot, it turns <strong>Yellow (Pending)</strong> and becomes <strong>hidden from other patients</strong> until a decision is made.  </li>
-<li>If the doctor <strong>approves</strong> the appointment, the slot turns <strong>Green (Confirmed)</strong> and remains visible only to the patient who booked it.  </li>
-<li>If the doctor <strong>rejects</strong> the appointment, the slot turns <strong>Grey (Busy)</strong>, indicating that it’s currently unavailable due to doctor constraints or scheduling conflicts.  </li>
-<li>If the <strong>patient cancels</strong> a booked appointment, the slot automatically reverts to <strong>White (Available)</strong> and becomes visible to all patients again.  </li>
+<li>Once a patient books a slot, it turns <strong>Yellow (Pending)</strong> and become disable to all patients.  </li>
+<li>If the doctor <strong>approves</strong> the appointment, the slot turns <strong>Green (Confirmed)</strong>.  </li>
+<li>If the doctor <strong>rejects</strong> the appointment, the slot turns <strong>Grey (Busy)</strong>.  </li>
+<li>If the <strong>patient cancels</strong> a booked appointment, the slot automatically reverts to <strong>White (Available)</strong> and becomes available to all patients again.  </li>
 <li>When a doctor marks themselves as <strong>Busy</strong>, all related slots appear <strong>Grey (Busy)</strong> and are temporarily disabled for booking.  </li>
 <li>If a slot remains <strong>unapproved within 30 minutes of the scheduled time</strong>, the system automatically suggests alternative available slots or doctors to the patient.</li>
 </ol>

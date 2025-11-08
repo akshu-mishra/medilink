@@ -16,6 +16,14 @@ It replaces manual appointment handling with an automated and transparent workfl
 | Doctor | Manage clinic appointments | Creates slots, reviews requests, and manages appointments | Saves time and improves scheduling |
 | Patient | Book and manage appointments | Registers, books, or cancels appointments online | Provides flexibility and convenience |
 
+## **Business Rules**
+
+1. Each appointment must be associated with one registered doctor and one registered patient.
+2. A doctor cannot approve overlapping appointments.
+3. Appointment cancellation is allowed only before the scheduled time.
+4. Only admins can modify or delete doctor records.
+5. A patient can book appointments only for time slots that are at least 1 hour ahead of the current time.
+
 ## **3. Admin Business Use Case**
 
 ### **Use Case: Manage Doctor Data**

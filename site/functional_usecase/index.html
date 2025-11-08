@@ -1,0 +1,581 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../introduction/" rel="prev"/>
+<link href="../usecases/" rel="next"/>
+<link href="../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.6.23" name="generator"/>
+<title>Functional Use Cases - MediLink</title>
+<link href="../assets/stylesheets/main.84d31ad4.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="deep-orange" data-md-color-primary="green" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#functional-use-cases">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="MediLink" class="md-header__button md-logo" data-md-component="logo" href=".." title="MediLink">
+<img alt="logo" src="../images/logo.jpeg"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            MediLink
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Functional Use Cases
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-hidden="true" class="md-option" data-md-color-accent="deep-orange" data-md-color-media="" data-md-color-primary="green" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="MediLink" class="md-nav__button md-logo" data-md-component="logo" href=".." title="MediLink">
+<img alt="logo" src="../images/logo.jpeg"/>
+</a>
+    MediLink
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
+<span class="md-ellipsis">
+    Overview
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../introduction/">
+<span class="md-ellipsis">
+    Introduction
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    Functional Use Cases
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    Functional Use Cases
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-functional-context">
+<span class="md-ellipsis">
+      1. Functional Context
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-functional-use-case-summary">
+<span class="md-ellipsis">
+      2. Functional Use Case Summary
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-fuc-01-user-authentication">
+<span class="md-ellipsis">
+      3. FUC-01 – User Authentication
+    </span>
+</a>
+<nav aria-label="3. FUC-01 – User Authentication" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#alternate-flow-error-handling">
+<span class="md-ellipsis">
+      Alternate Flow / Error Handling
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-fuc-03-manage-appointment-slots-doctor">
+<span class="md-ellipsis">
+      4. FUC-03 – Manage Appointment Slots (Doctor)
+    </span>
+</a>
+<nav aria-label="4. FUC-03 – Manage Appointment Slots (Doctor)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#validation-rules">
+<span class="md-ellipsis">
+      Validation Rules:
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-fuc-04-book-appointment-patient">
+<span class="md-ellipsis">
+      5. FUC-04 – Book Appointment (Patient)
+    </span>
+</a>
+<nav aria-label="5. FUC-04 – Book Appointment (Patient)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#error-handling">
+<span class="md-ellipsis">
+      Error Handling
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6-fuc-05-approvereject-appointment-doctor">
+<span class="md-ellipsis">
+      6. FUC-05 – Approve/Reject Appointment (Doctor)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7-fuc-06-cancel-appointment-patient">
+<span class="md-ellipsis">
+      7. FUC-06 – Cancel Appointment (Patient)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#8-summary">
+<span class="md-ellipsis">
+      8. Summary
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../usecases/">
+<span class="md-ellipsis">
+    Bussiness Use Cases
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-functional-context">
+<span class="md-ellipsis">
+      1. Functional Context
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-functional-use-case-summary">
+<span class="md-ellipsis">
+      2. Functional Use Case Summary
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-fuc-01-user-authentication">
+<span class="md-ellipsis">
+      3. FUC-01 – User Authentication
+    </span>
+</a>
+<nav aria-label="3. FUC-01 – User Authentication" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#alternate-flow-error-handling">
+<span class="md-ellipsis">
+      Alternate Flow / Error Handling
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-fuc-03-manage-appointment-slots-doctor">
+<span class="md-ellipsis">
+      4. FUC-03 – Manage Appointment Slots (Doctor)
+    </span>
+</a>
+<nav aria-label="4. FUC-03 – Manage Appointment Slots (Doctor)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#validation-rules">
+<span class="md-ellipsis">
+      Validation Rules:
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-fuc-04-book-appointment-patient">
+<span class="md-ellipsis">
+      5. FUC-04 – Book Appointment (Patient)
+    </span>
+</a>
+<nav aria-label="5. FUC-04 – Book Appointment (Patient)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#error-handling">
+<span class="md-ellipsis">
+      Error Handling
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6-fuc-05-approvereject-appointment-doctor">
+<span class="md-ellipsis">
+      6. FUC-05 – Approve/Reject Appointment (Doctor)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7-fuc-06-cancel-appointment-patient">
+<span class="md-ellipsis">
+      7. FUC-06 – Cancel Appointment (Patient)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#8-summary">
+<span class="md-ellipsis">
+      8. Summary
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="functional-use-cases"><strong>Functional Use Cases</strong></h1>
+<p>This section outlines the functional use cases of the MediLink Appointment System, describing how system components interact to fulfill business objectives through technical features and workflows.
+Each use case focuses on the system behavior, triggered by user actions and handled via the backend (FastAPI + PostgreSQL) and frontend (React / PWA).</p>
+<h2 id="1-functional-context"><strong>1. Functional Context</strong></h2>
+<p>MediLink’s functional layer is responsible for implementing the digital workflows that allow doctors, patients, and administrators to interact seamlessly.
+Each function from appointment scheduling to data validation is automated to ensure accuracy, security, and real-time synchronization across users.</p>
+<h2 id="2-functional-use-case-summary"><strong>2. Functional Use Case Summary</strong></h2>
+<table>
+<thead>
+<tr>
+<th><strong>Use Case ID</strong></th>
+<th><strong>Use Case Name</strong></th>
+<th><strong>Primary Actor(s)</strong></th>
+<th><strong>Goal / Description</strong></th>
+<th><strong>Expected Outcome</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>FUC-01</strong></td>
+<td>User Authentication</td>
+<td>Admin, Doctor, Patient</td>
+<td>Secure login and registration through JWT-based authentication.</td>
+<td>Access granted after validation.</td>
+</tr>
+<tr>
+<td><strong>FUC-02</strong></td>
+<td>Manage Doctor Records</td>
+<td>Admin</td>
+<td>Add, update, or delete doctor information in the database.</td>
+<td>Records updated successfully.</td>
+</tr>
+<tr>
+<td><strong>FUC-03</strong></td>
+<td>Manage Appointment Slots</td>
+<td>Doctor</td>
+<td>Create or edit time slots for patient booking.</td>
+<td>Slots stored and visible to patients.</td>
+</tr>
+<tr>
+<td><strong>FUC-04</strong></td>
+<td>Book Appointment</td>
+<td>Patient</td>
+<td>Select a doctor and time slot to request an appointment.</td>
+<td>Request saved as “Pending.”</td>
+</tr>
+<tr>
+<td><strong>FUC-05</strong></td>
+<td>Approve/Reject Appointment</td>
+<td>Doctor</td>
+<td>Approve, reject, or reschedule patient requests.</td>
+<td>Appointment status updated.</td>
+</tr>
+<tr>
+<td><strong>FUC-06</strong></td>
+<td>Cancel Appointment</td>
+<td>Patient</td>
+<td>Cancel previously booked appointments.</td>
+<td>Slot becomes available again.</td>
+</tr>
+<tr>
+<td><strong>FUC-07</strong></td>
+<td>Data Validation &amp; Error Handling</td>
+<td>System</td>
+<td>Validate inputs and handle failures (network, DB, etc.).</td>
+<td>Transaction rollback and alert message.</td>
+</tr>
+<tr>
+<td><strong>FUC-08</strong></td>
+<td>Logout</td>
+<td>All Users</td>
+<td>End active session securely.</td>
+<td>Session terminated, user redirected to login.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-fuc-01-user-authentication"><strong>3. FUC-01 – User Authentication</strong></h2>
+<p><strong>Description</strong>
+Ensures that only verified users can access MediLink using secure credentials.
+The system uses JWT tokens for session management and role-based access control.</p>
+<div class="mermaid">flowchart TD
+    A["User Enters Credentials"] --&gt; B["Frontend Sends Login Request (POST /auth/login)"]
+    B --&gt; C["Backend Validates Credentials"]
+    C --&gt; D{"Credentials Valid?"}
+    D --&gt;|Yes| E["Generate JWT Token and Assign Role"]
+    D --&gt;|No| F["Return Error Message: Invalid Username or Password"]
+    E --&gt; G["Redirect User to Respective Dashboard"]
+    F --&gt; H["Prompt Retry or Password Reset"]
+</div>
+<h3 id="alternate-flow-error-handling"><strong>Alternate Flow / Error Handling</strong></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Failure Type</strong></th>
+<th><strong>System Response</strong></th>
+<th><strong>User Message</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Invalid credentials</td>
+<td>HTTP 401 returned</td>
+<td>“Invalid username or password.”</td>
+</tr>
+<tr>
+<td>Token expired</td>
+<td>Token refresh triggered</td>
+<td>“Session expired. Please log in again.”</td>
+</tr>
+<tr>
+<td>Network failure</td>
+<td>Frontend retry logic triggered</td>
+<td>“Network issue. Try again later.”</td>
+</tr>
+</tbody>
+</table>
+<h2 id="4-fuc-03-manage-appointment-slots-doctor"><strong>4. FUC-03 – Manage Appointment Slots (Doctor)</strong></h2>
+<p><strong>Description</strong>
+Allows doctors to define their available consultation slots, which patients can later view and book.</p>
+<div class="mermaid">flowchart TD
+    A["Doctor Logs In"] --&gt; B["Access 'Manage Slots' Section"]
+    B --&gt; C["Add / Edit / Delete Time Slots"]
+    C --&gt; D["Frontend Sends API Request (POST /slots)"]
+    D --&gt; E["FastAPI Validates Slot Data"]
+    E --&gt; F{"Validation Passed?"}
+    F --&gt;|Yes| G["Save Slots in Database"]
+    F --&gt;|No| H["Return Error Message"]
+    G --&gt; I["Show Success Notification to Doctor"]
+</div>
+<h3 id="validation-rules"><strong>Validation Rules:</strong></h3>
+<ul>
+<li>No overlapping slots allowed.</li>
+<li>Slot date/time must be valid (future).</li>
+<li>Slots linked to the logged-in doctor’s ID.</li>
+</ul>
+<h2 id="5-fuc-04-book-appointment-patient"><strong>5. FUC-04 – Book Appointment (Patient)</strong></h2>
+<p><strong>Description</strong>
+Patient selects an available slot and submits an appointment request.
+The system stores it as “Pending” until reviewed by the doctor.</p>
+<div class="mermaid">flowchart TD
+    A["Patient Logs In"] --&gt; B["Views Doctor List"]
+    B --&gt; C["Select Doctor &amp; Available Slot"]
+    C --&gt; D["Click 'Book Appointment'"]
+    D --&gt; E["System Saves Request with Status = Pending"]
+    E --&gt; F["Doctor Receives Notification"]
+    F --&gt; G["Patient Receives Confirmation Message"]
+</div>
+<h3 id="error-handling"><strong>Error Handling</strong></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Failure Case</strong></th>
+<th><strong>System Action</strong></th>
+<th><strong>Message Displayed</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Slot already booked</td>
+<td>Backend rejects request</td>
+<td>“Slot unavailable, please choose another time.”</td>
+</tr>
+<tr>
+<td>Invalid input</td>
+<td>Validation fails</td>
+<td>“Invalid details. Please retry.”</td>
+</tr>
+<tr>
+<td>Network issue</td>
+<td>Retry or fail-safe</td>
+<td>“Network error. Please try again later.”</td>
+</tr>
+</tbody>
+</table>
+<h2 id="6-fuc-05-approvereject-appointment-doctor"><strong>6. FUC-05 – Approve/Reject Appointment (Doctor)</strong></h2>
+<p><strong>Description</strong>
+Doctors review incoming requests and either approve, reject, or suggest new timings.</p>
+<div class="mermaid">flowchart TD
+    A["Doctor Opens Dashboard"] --&gt; B["Views Pending Requests"]
+    B --&gt; C{"Any Conflicts or Priorities?"}
+    C --&gt;|No| D["Approve Appointment"]
+    C --&gt;|Yes| E["Reject or Suggest New Slot"]
+    D --&gt; F["Update Status = Approved"]
+    E --&gt; G["Update Status = Rejected / Rescheduled"]
+    F --&gt; H["Notify Patient"]
+    G --&gt; H
+    H --&gt; I["Appointment List Updated in DB"]
+</div>
+<h2 id="7-fuc-06-cancel-appointment-patient"><strong>7. FUC-06 – Cancel Appointment (Patient)</strong></h2>
+<p><strong>Description</strong>
+Patient cancels a scheduled appointment before consultation.</p>
+<div class="mermaid">flowchart TD
+    A["Patient Opens Appointment List"] --&gt; B["Select Appointment to Cancel"]
+    B --&gt; C["Click 'Cancel'"]
+    C --&gt; D["System Updates Status = Cancelled"]
+    D --&gt; E["Slot Released to Database"]
+    E --&gt; F["Doctor Notified"]
+    F --&gt; G["Patient Sees Updated Schedule"]
+</div>
+<h2 id="8-summary"><strong>8. Summary</strong></h2>
+<p>MediLink’s functional use cases provide the backbone of the system, enabling smooth user–system interactions through secure, validated, and automated processes.
+Each function directly supports a corresponding business use case, ensuring that operational goals — such as improved efficiency, reduced workload, and better patient satisfaction — are achieved through reliable technical execution.</p>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script></body>
+</html>

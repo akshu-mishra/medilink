@@ -22,8 +22,9 @@
 | **Section** | **Description** |
 |--------------|-----------------|
 | **Overview** | Provides overview of the project with objective, summary and documentation struction of MediLink. |
-| **Functional Description** | Explains project background, objectives, workflow and technologies used for MediLink. |
+| **Introduction** | Explains project background, objectives, workflow and technologies used for MediLink. |
 | **Business Use Cases** | Describes how Admin, Doctor, and Patient interact with the system, supported by role-based workflows and diagrams. |
+| **Functional Use Cases** | This section outlines MediLink’s key system functions and user interactions that achieve business goals. |
 
 ## **Objectives**
 

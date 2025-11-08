@@ -10,7 +10,8 @@ theme:
 
 nav:
   - Overview: index.md
-  - Functional Documentation: function.md
+  - Introduction: introduction.md
+  - Functional Use Cases: functional_usecase.md
   - Bussiness Use Cases: usecases.md
 
 plugins:

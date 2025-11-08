@@ -1,0 +1,771 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../function/" rel="prev"/>
+<link href="../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.6.23" name="generator"/>
+<title>Bussiness Use Cases - MediLink</title>
+<link href="../assets/stylesheets/main.84d31ad4.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="deep-orange" data-md-color-primary="green" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#business-use-cases">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="MediLink" class="md-header__button md-logo" data-md-component="logo" href=".." title="MediLink">
+<img alt="logo" src="../images/logo.jpeg"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            MediLink
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Bussiness Use Cases
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-hidden="true" class="md-option" data-md-color-accent="deep-orange" data-md-color-media="" data-md-color-primary="green" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="MediLink" class="md-nav__button md-logo" data-md-component="logo" href=".." title="MediLink">
+<img alt="logo" src="../images/logo.jpeg"/>
+</a>
+    MediLink
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
+<span class="md-ellipsis">
+    Overview
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../function/">
+<span class="md-ellipsis">
+    Functional Documentation
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    Bussiness Use Cases
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    Bussiness Use Cases
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-business-context">
+<span class="md-ellipsis">
+      1. Business Context
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-business-use-case-summary">
+<span class="md-ellipsis">
+      2. Business Use Case Summary
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-admin-business-use-case">
+<span class="md-ellipsis">
+      3. Admin Business Use Case
+    </span>
+</a>
+<nav aria-label="3. Admin Business Use Case" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#use-case-manage-doctor-data">
+<span class="md-ellipsis">
+      Use Case: Manage Doctor Data
+    </span>
+</a>
+<nav aria-label="Use Case: Manage Doctor Data" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#failure-handling-in-admin-workflow">
+<span class="md-ellipsis">
+      Failure Handling in Admin Workflow
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-doctor-business-use-cases">
+<span class="md-ellipsis">
+      4. Doctor Business Use Cases
+    </span>
+</a>
+<nav aria-label="4. Doctor Business Use Cases" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#use-case-1-manage-available-time-slots">
+<span class="md-ellipsis">
+      Use Case 1: Manage Available Time Slots
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#use-case-2-approve-or-reject-appointments">
+<span class="md-ellipsis">
+      Use Case 2: Approve or Reject Appointments
+    </span>
+</a>
+<nav aria-label="Use Case 2: Approve or Reject Appointments" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#failure-handling-in-doctor-workflow">
+<span class="md-ellipsis">
+      Failure Handling in Doctor Workflow
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-patient-business-use-case">
+<span class="md-ellipsis">
+      5. Patient Business Use Case
+    </span>
+</a>
+<nav aria-label="5. Patient Business Use Case" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#use-case-book-cancel-appointment">
+<span class="md-ellipsis">
+      Use Case: Book &amp; Cancel Appointment
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#error-handling-optional-to-add">
+<span class="md-ellipsis">
+      Error Handling (Optional to Add)
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7-business-benefits-summary">
+<span class="md-ellipsis">
+      7. Business Benefits Summary
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#8-summary">
+<span class="md-ellipsis">
+      8. Summary
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-business-context">
+<span class="md-ellipsis">
+      1. Business Context
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-business-use-case-summary">
+<span class="md-ellipsis">
+      2. Business Use Case Summary
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-admin-business-use-case">
+<span class="md-ellipsis">
+      3. Admin Business Use Case
+    </span>
+</a>
+<nav aria-label="3. Admin Business Use Case" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#use-case-manage-doctor-data">
+<span class="md-ellipsis">
+      Use Case: Manage Doctor Data
+    </span>
+</a>
+<nav aria-label="Use Case: Manage Doctor Data" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#failure-handling-in-admin-workflow">
+<span class="md-ellipsis">
+      Failure Handling in Admin Workflow
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-doctor-business-use-cases">
+<span class="md-ellipsis">
+      4. Doctor Business Use Cases
+    </span>
+</a>
+<nav aria-label="4. Doctor Business Use Cases" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#use-case-1-manage-available-time-slots">
+<span class="md-ellipsis">
+      Use Case 1: Manage Available Time Slots
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#use-case-2-approve-or-reject-appointments">
+<span class="md-ellipsis">
+      Use Case 2: Approve or Reject Appointments
+    </span>
+</a>
+<nav aria-label="Use Case 2: Approve or Reject Appointments" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#failure-handling-in-doctor-workflow">
+<span class="md-ellipsis">
+      Failure Handling in Doctor Workflow
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-patient-business-use-case">
+<span class="md-ellipsis">
+      5. Patient Business Use Case
+    </span>
+</a>
+<nav aria-label="5. Patient Business Use Case" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#use-case-book-cancel-appointment">
+<span class="md-ellipsis">
+      Use Case: Book &amp; Cancel Appointment
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#error-handling-optional-to-add">
+<span class="md-ellipsis">
+      Error Handling (Optional to Add)
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7-business-benefits-summary">
+<span class="md-ellipsis">
+      7. Business Benefits Summary
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#8-summary">
+<span class="md-ellipsis">
+      8. Summary
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="business-use-cases"><strong>Business Use Cases</strong></h1>
+<p>This section defines the business-level use cases of the MediLink Appointment System.<br/>
+These use cases describe how each stakeholder (Admin, Doctor, and Patient) interacts with the system to fulfill their operational objectives and contribute to efficient clinic management.</p>
+<h2 id="1-business-context"><strong>1. Business Context</strong></h2>
+<p>MediLink simplifies clinic operations by connecting doctors, patients, and system administrators through a single digital platform.<br/>
+It replaces manual appointment handling with an automated and transparent workflow, improving efficiency, accuracy, and patient satisfaction.</p>
+<h2 id="2-business-use-case-summary"><strong>2. Business Use Case Summary</strong></h2>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Business Objective</th>
+<th>Description</th>
+<th>Value to Business</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Admin</td>
+<td>Manage system setup</td>
+<td>Handles doctor registration, patient data, and database maintenance</td>
+<td>Ensures smooth operations</td>
+</tr>
+<tr>
+<td>Doctor</td>
+<td>Manage clinic appointments</td>
+<td>Creates slots, reviews requests, and manages appointments</td>
+<td>Saves time and improves scheduling</td>
+</tr>
+<tr>
+<td>Doctor</td>
+<td>Maintain patient records</td>
+<td>Reviews patient visit history</td>
+<td>Improves care quality</td>
+</tr>
+<tr>
+<td>Patient</td>
+<td>Book and manage appointments</td>
+<td>Registers, books, or cancels appointments online</td>
+<td>Provides flexibility and convenience</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-admin-business-use-case"><strong>3. Admin Business Use Case</strong></h2>
+<h3 id="use-case-manage-doctor-data"><strong>Use Case: Manage Doctor Data</strong></h3>
+<p><strong>Goal:</strong> Admin maintains doctor records.<br/>
+<strong>Trigger:</strong> Admin logs into the admin dashboard.<br/>
+<strong>Outcome:</strong> Data updated securely in the database.</p>
+<div class="mermaid">flowchart TD
+    A["Admin Login"] --&gt; B["Access Dashboard"]
+    B --&gt; C["View Doctor List"]
+    C --&gt; D["Add / Update / Delete Records"]
+    D --&gt; E{"Database Update Successful?"}
+    E --&gt;|Yes| F["Show Success Message to Admin"]
+    E --&gt;|No| G["Rollback Changes and Show Error Message"]
+    G --&gt; H["Log Error in System"]
+    F --&gt; I["Admin Continues Work"]
+    H --&gt; I
+
+</div>
+<h4 id="failure-handling-in-admin-workflow"><strong>Failure Handling in Admin Workflow</strong></h4>
+<p>The following table describes the possible failure scenarios during Admin operations and how the MediLink system handles them to ensure data consistency and reliability.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Failure Type</strong></th>
+<th><strong>System Action</strong></th>
+<th><strong>Outcome / User Notification</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Database error (commit failed)</strong></td>
+<td>Transaction is rolled back in FastAPI.</td>
+<td>No partial data is saved; Admin sees an error message like <em>“Database update failed.”</em></td>
+</tr>
+<tr>
+<td><strong>Validation error (invalid data)</strong></td>
+<td>Backend validation logic rejects input.</td>
+<td>Admin is prompted: <em>“Please enter valid details.”</em></td>
+</tr>
+<tr>
+<td><strong>Network or server issue</strong></td>
+<td>Request fails safely; frontend retries or shows an alert.</td>
+<td>Admin sees a message: <em>“Unable to connect to server. Try again later.”</em></td>
+</tr>
+<tr>
+<td><strong>Authentication issue</strong></td>
+<td>Session expires; backend returns HTTP 401.</td>
+<td>Admin is redirected to the login screen.</td>
+</tr>
+<tr>
+<td><strong>Unexpected exception</strong></td>
+<td>FastAPI logs the error and returns a standardized response.</td>
+<td><em>“Something went wrong. Please contact the system administrator.”</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="4-doctor-business-use-cases">4. <strong>Doctor Business Use Cases</strong></h2>
+<h3 id="use-case-1-manage-available-time-slots"><strong>Use Case 1: Manage Available Time Slots</strong></h3>
+<ul>
+<li><strong>Goal:</strong><br/>
+  The doctor wants to create, update, or remove available consultation time slots for patients.  </li>
+<li><strong>Trigger:</strong><br/>
+  The doctor logs into the system and opens the “Slot Management” panel from the dashboard.  </li>
+<li><strong>Outcome:</strong><br/>
+  The system validates and saves the defined slots in the database, making them visible to patients for booking.<br/>
+  If an error occurs (invalid slot details or database failure), the system displays an error message and rolls back changes.</li>
+</ul>
+<h3 id="use-case-2-approve-or-reject-appointments"><strong>Use Case 2: Approve or Reject Appointments</strong></h3>
+<ul>
+<li>
+<p><strong>Goal:</strong><br/>
+  The doctor wants to review patient appointment requests and decide whether to approve, reject, or reschedule them based on availability and priority tasks.</p>
+</li>
+<li>
+<p><strong>Trigger:</strong><br/>
+  New appointment requests appear on the doctor’s dashboard.</p>
+</li>
+<li>
+<p><strong>Outcome:</strong> </p>
+</li>
+<li>If <strong>no priority task</strong> exists at the requested time, the doctor approves the appointment.  </li>
+<li>If a <strong>priority task</strong> (e.g., emergency or meeting) exists, the doctor rejects the request, and the system automatically suggests alternative time slots to the patient.  </li>
+<li>All updates are reflected in the database, and the patient is notified.  </li>
+<li>In case of database or network failure, the transaction is rolled back and the doctor is alerted.</li>
+</ul>
+<div class="mermaid">flowchart TD
+    A["Doctor Logs Into System"] --&gt; B["Access Dashboard"]
+
+    B --&gt; C["Open Slot Management Panel"]
+    C --&gt; D["Define Available Dates and Time Slots"]
+    D --&gt; H{"Database Commit Successful?"}
+    H --&gt;|Yes| I["Slots Saved and Visible to Patients"]
+    H --&gt;|No| J["Rollback Transaction and Show Error Message"]
+
+    I --&gt; K["View Appointment Requests"]
+    K --&gt; L{"Any Priority Task at Requested Time?"}
+
+    L --&gt;|No| M["Approve Appointment"]
+    L --&gt;|Yes| N["Reject Request and Trigger Slot Suggestion"]
+
+    M --&gt; O{"Database Update Successful?"}
+    O --&gt;|Yes| P["Update Status = Approved"]
+    O --&gt;|No| Q["Rollback Transaction and Show Error Message"]
+
+    N --&gt; R["System Suggests Next Available Slot to Patient"]
+
+    P --&gt; S["Notify Patient: Appointment Confirmed"]
+    R --&gt; T["Notify Patient: Suggested New Slot"]
+    Q --&gt; U["Log Error for Admin Review"]
+
+    S --&gt; V["Doctor Reviews Updated Schedule"]
+    T --&gt; V
+    U --&gt; V
+
+    V --&gt; W["End Process"]
+
+    J --&gt; X["Log Validation Error"]
+    Q --&gt; X
+    X --&gt; Y["Admin or Doctor Reviews Logs Later"]
+</div>
+<h4 id="failure-handling-in-doctor-workflow"><strong>Failure Handling in Doctor Workflow</strong></h4>
+<p>The MediLink system includes robust failure-handling mechanisms to maintain <strong>data consistency</strong>, ensure <strong>system reliability</strong>, and provide <strong>clear feedback</strong> to the doctor during any unexpected situation.<br/>
+The table below outlines possible failure points, the system’s response, and the resulting user notifications.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Failure Type</strong></th>
+<th><strong>System Action</strong></th>
+<th><strong>Outcome / User Notification</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Invalid Slot Data</strong></td>
+<td>Input validation fails at the backend before committing to the database.</td>
+<td>Doctor sees an alert: <em>"Invalid time or date entered. Please recheck details."</em></td>
+</tr>
+<tr>
+<td><strong>Database Commit Failure (while saving slots)</strong></td>
+<td>FastAPI rolls back the transaction to prevent partial updates.</td>
+<td><em>"Failed to save slot. Please try again later."</em></td>
+</tr>
+<tr>
+<td><strong>Priority Task Conflict</strong></td>
+<td>The system detects a conflicting priority task and rejects the booking.</td>
+<td><em>"Request rejected due to another priority task. System will suggest an alternative slot."</em></td>
+</tr>
+<tr>
+<td><strong>Duplicate Appointment Request</strong></td>
+<td>Backend prevents booking or approval of the same slot twice.</td>
+<td><em>"Slot already booked. Please choose another time."</em></td>
+</tr>
+<tr>
+<td><strong>Database Update Failure (during approval)</strong></td>
+<td>Transaction rolled back automatically; changes not committed.</td>
+<td><em>"Unable to update appointment status. Please retry."</em></td>
+</tr>
+<tr>
+<td><strong>Network or Server Failure</strong></td>
+<td>Frontend retries request; backend logs error.</td>
+<td><em>"Network issue detected. Please check your connection or try again later."</em></td>
+</tr>
+<tr>
+<td><strong>Authentication Timeout</strong></td>
+<td>Session expires while performing actions.</td>
+<td><em>"Session expired. Please log in again."</em></td>
+</tr>
+<tr>
+<td><strong>Unexpected Exception</strong></td>
+<td>FastAPI logs the error for admin review and sends a generic error message.</td>
+<td><em>"Something went wrong. Please contact the administrator."</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-patient-business-use-case"><strong>5. Patient Business Use Case</strong></h2>
+<h3 id="use-case-book-cancel-appointment"><strong>Use Case: Book &amp; Cancel Appointment</strong></h3>
+<ul>
+<li>
+<p><strong>Goal</strong></p>
+<ul>
+<li>To allow the patient to book, manage, or cancel their appointments conveniently through the MediLink system, ensuring smooth scheduling and updated availability.</li>
+</ul>
+</li>
+<li>
+<p><strong>Trigger</strong></p>
+<ul>
+<li>Patient logs into the system and selects an available time slot for booking. </li>
+<li>Alternatively, the patient may cancel an already booked appointment due to a change in schedule or other reasons.</li>
+</ul>
+</li>
+<li>
+<p><strong>Outcome</strong></p>
+<ul>
+<li>When booking: The system saves the appointment as <em>Pending</em> and notifies the doctor for review.  </li>
+<li>When cancelling: The system updates the appointment status to <em>Cancelled</em> and makes the slot available for others.  </li>
+<li>In both cases, real-time updates are reflected for both patient and doctor, ensuring data consistency.</li>
+</ul>
+</li>
+</ul>
+<div class="mermaid">flowchart TD
+    A["Patient Logs Into System"] --&gt; B["View Available Slots"]
+    B --&gt; C["Select Date and Time"]
+    C --&gt; D["Submit Booking Request"]
+    D --&gt; E["System Saves Request with Status = Pending"]
+    E --&gt; F["Doctor Reviews Request Later"]
+
+    F --&gt; O{"Appointment Accepted?"}
+    O --&gt;|Yes| P["Status Updated = Approved"]
+    O --&gt;|No| Q["System Suggests Alternative Slots to Patient"]
+
+    P --&gt; R["Patient Notified: Appointment Confirmed"]
+    Q --&gt; S["Patient Notified: Suggested New Slots"]
+    R --&gt; T["Patient Opens Appointment List"]
+    S --&gt; AC{"Suggestion Accepted?"}
+    AC --&gt;|Yes| F
+    AC --&gt;|No| AB["End Process"]
+
+    T --&gt; U["Select Appointment to Cancel"]
+    U --&gt; V["Click 'Cancel' Button"]
+    V --&gt; W{"Cancellation Confirmed?"}
+    W --&gt;|Yes| X["System Updates Status = Cancelled"]
+    W --&gt;|No| T
+
+    X --&gt; Z["Slot Marked as Available Again"]
+
+    Z --&gt; AA["Updated Schedule Displayed to Patient and Doctor"]
+    AA --&gt; AB
+</div>
+<h3 id="error-handling-optional-to-add"><strong>Error Handling (Optional to Add)</strong></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Failure Type</strong></th>
+<th><strong>System Action</strong></th>
+<th><strong>User Notification</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Invalid booking input</td>
+<td>Request rejected</td>
+<td>“Invalid details. Please select a valid date/time.”</td>
+</tr>
+<tr>
+<td>Slot already booked</td>
+<td>Backend validation fails</td>
+<td>“Slot no longer available. Please choose another time.”</td>
+</tr>
+<tr>
+<td>Network or DB error</td>
+<td>Rollback operation</td>
+<td>“Booking failed. Try again later.”</td>
+</tr>
+</tbody>
+</table>
+<h2 id="7-business-benefits-summary"><strong>7. Business Benefits Summary</strong></h2>
+<table>
+<thead>
+<tr>
+<th><strong>Business Area</strong></th>
+<th><strong>Before MediLink</strong></th>
+<th><strong>After MediLink</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Appointment Scheduling</td>
+<td>Manually</td>
+<td>Using Machine</td>
+</tr>
+<tr>
+<td>Patient Management</td>
+<td>Paper-based</td>
+<td>Digital and searchable</td>
+</tr>
+<tr>
+<td>Communication</td>
+<td>Delayed or manual</td>
+<td>Fast Responses</td>
+</tr>
+<tr>
+<td>Doctor Workload</td>
+<td>Slots sometime overlap</td>
+<td>Simple and time-efficient</td>
+</tr>
+<tr>
+<td>Data Accuracy</td>
+<td>Common Human errors</td>
+<td>Database ensures consistency</td>
+</tr>
+<tr>
+<td>Accessibility</td>
+<td>Only at clinic</td>
+<td>Anytime, anywhere via PWA</td>
+</tr>
+</tbody>
+</table>
+<h2 id="8-summary"><strong>8. Summary</strong></h2>
+<p>The MediLink business model enables smooth coordination among Admin, Doctor, and Patient, ensuring a seamless digital appointment experience.<br/>
+By automating clinic operations, it enhances time management, data reliability, and communication transparency.  </p>
+<p>MediLink bridges the gap between healthcare and technology, delivering an efficient, patient-centric digital appointment system.</p>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script></body>
+</html>

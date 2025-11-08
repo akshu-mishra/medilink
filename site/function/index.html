@@ -1,0 +1,543 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href=".." rel="prev"/>
+<link href="../usecases/" rel="next"/>
+<link href="../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.6.23" name="generator"/>
+<title>Functional Documentation - MediLink</title>
+<link href="../assets/stylesheets/main.84d31ad4.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="deep-orange" data-md-color-primary="green" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#functional-documentation">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="MediLink" class="md-header__button md-logo" data-md-component="logo" href=".." title="MediLink">
+<img alt="logo" src="../images/logo.jpeg"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            MediLink
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Functional Documentation
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-hidden="true" class="md-option" data-md-color-accent="deep-orange" data-md-color-media="" data-md-color-primary="green" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="MediLink" class="md-nav__button md-logo" data-md-component="logo" href=".." title="MediLink">
+<img alt="logo" src="../images/logo.jpeg"/>
+</a>
+    MediLink
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
+<span class="md-ellipsis">
+    Overview
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    Functional Documentation
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    Functional Documentation
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-introduction">
+<span class="md-ellipsis">
+      1. Introduction
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-project-background">
+<span class="md-ellipsis">
+      2. Project Background
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-objective">
+<span class="md-ellipsis">
+      3. Objective
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-core-modules">
+<span class="md-ellipsis">
+      4. Core Modules
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-project-workflow">
+<span class="md-ellipsis">
+      5. Project Workflow
+    </span>
+</a>
+<nav aria-label="5. Project Workflow" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#workflow-explanation">
+<span class="md-ellipsis">
+      Workflow Explanation
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../usecases/">
+<span class="md-ellipsis">
+    Bussiness Use Cases
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-introduction">
+<span class="md-ellipsis">
+      1. Introduction
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-project-background">
+<span class="md-ellipsis">
+      2. Project Background
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-objective">
+<span class="md-ellipsis">
+      3. Objective
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-core-modules">
+<span class="md-ellipsis">
+      4. Core Modules
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-project-workflow">
+<span class="md-ellipsis">
+      5. Project Workflow
+    </span>
+</a>
+<nav aria-label="5. Project Workflow" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#workflow-explanation">
+<span class="md-ellipsis">
+      Workflow Explanation
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="functional-documentation"><strong>Functional Documentation</strong></h1>
+<h2 id="1-introduction"><strong>1. Introduction</strong></h2>
+<p>The <strong>MediLink Appointment Management System</strong> is a digital platform developed for clinics or individual doctors to manage appointments efficiently.<br/>
+It connects <strong>Admins</strong>, <strong>Doctors</strong>, and <strong>Patients</strong> within a unified system, automating tasks such as booking, slot management, and appointment tracking.</p>
+<p>This system replaces traditional manual scheduling with a modern web-based and mobile-compatible <strong>Progressive Web Application (PWA)</strong>.<br/>
+By integrating <strong>FastAPI</strong> for backend logic and <strong>PostgreSQL</strong> for secure data storage, MediLink ensures high performance, consistency, and scalability.</p>
+<h2 id="2-project-background"><strong>2. Project Background</strong></h2>
+<p>In many small and medium-sized clinics, appointments are managed manually through phone calls or written registers.<br/>
+This process often leads to:</p>
+<ul>
+<li>Double bookings and scheduling conflicts.  </li>
+<li>Delays in communication between patients and doctors.  </li>
+<li>Lack of real-time slot availability.  </li>
+<li>Paper-based data storage prone to errors and data loss.  </li>
+</ul>
+<p>To overcome these challenges, <strong>MediLink</strong> introduces a <strong>digital transformation of clinic operations</strong>.<br/>
+It automates appointment booking, provides real-time updates, and offers remote access for patients through a secure and responsive platform.</p>
+<h2 id="3-objective"><strong>3. Objective</strong></h2>
+<p>The primary objective of <strong>MediLink</strong> is to develop a <strong>secure, efficient, and user-friendly appointment system</strong> that:</p>
+<ul>
+<li>Allows <strong>patients</strong> to register, log in, and manage appointments digitally.  </li>
+<li>Enables <strong>doctors</strong> to define availability, view requests, and approve or reject bookings.  </li>
+<li>Provides <strong>admins</strong> with oversight of the system and the ability to manage doctor data and monitor performance.</li>
+</ul>
+<p>This ensures transparency, reduces manual workload, and prevents scheduling errors through automation.</p>
+<h2 id="4-core-modules"><strong>4. Core Modules</strong></h2>
+<table>
+<thead>
+<tr>
+<th><strong>Module</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Admin Module</strong></td>
+<td>The Admin handles doctor details and data consistency.</td>
+</tr>
+<tr>
+<td><strong>Doctor Module</strong></td>
+<td>The Doctor defines available slots, views booking requests, and approves or rejects them based on availability.</td>
+</tr>
+<tr>
+<td><strong>Patient Module</strong></td>
+<td>Patients can register, log in, book or cancel appointments, and check appointment status via PWA.</td>
+</tr>
+<tr>
+<td><strong>Database Module</strong></td>
+<td>Manages structured storage for users, appointments, and slot data using PostgreSQL.</td>
+</tr>
+<tr>
+<td><strong>API Module</strong></td>
+<td>Developed with FastAPI to handle authentication, booking, and communication between frontend and backend.</td>
+</tr>
+<tr>
+<td><strong>PWA Module</strong></td>
+<td>Provides mobile-friendly access, installable features, and limited offline capabilities.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-project-workflow"><strong>5. Project Workflow</strong></h2>
+<div class="mermaid">flowchart TD
+    A["Patient Registers or Logs In"] --&gt; B["View Available Slots"]
+    B --&gt; C["Book Appointment"]
+    C --&gt; D["System Saves Appointment in Database"]
+    D --&gt; E["Doctor Reviews Appointment Request"]
+    E --&gt; F{"Approve or Reject?"}
+    F --&gt;|Approve| G["Status Updated: Approved"]
+    F --&gt;|Reject| H["Status Updated: Rejected"]
+    G --&gt; I["Patient Receives Confirmation"]
+    H --&gt; I
+    I --&gt; J["Admin Monitors Overall Activity"]
+</div>
+<h3 id="workflow-explanation"><strong>Workflow Explanation</strong></h3>
+<ul>
+<li><strong>Patient Registration:</strong> Patients create an account or log in to the system.</li>
+<li><strong>Slot Management:</strong> Doctors create and update available consultation slots.</li>
+<li><strong>Booking Process:</strong> Patients select a preferred slot and submit a booking request.</li>
+<li><strong>Approval Process:</strong> Doctor reviews and approves or rejects the request.</li>
+<li><strong>Admin Monitoring:</strong> Admin oversees system activity and ensures smooth operation.</li>
+</ul>
+<h1 id="technologies-used">Technologies Used</h1>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Technologies</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Frontend</td>
+<td>HTML5, CSS3, JavaScript, Bootstrap</td>
+</tr>
+<tr>
+<td>Backend</td>
+<td>Python (FastAPI)</td>
+</tr>
+<tr>
+<td>Database</td>
+<td>PostgreSQL</td>
+</tr>
+<tr>
+<td>Database Tool</td>
+<td>DBeaver</td>
+</tr>
+<tr>
+<td>Authentication</td>
+<td>JWT</td>
+</tr>
+<tr>
+<td>Version Control</td>
+<td>Git, GitHub</td>
+</tr>
+<tr>
+<td>Documentation</td>
+<td>MkDocs Material</td>
+</tr>
+</tbody>
+</table>
+<h2 id="system-functionalities">System Functionalities</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Functionality</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>User Authentication</td>
+<td>Secure login and role-based access using JWT/OAuth2.</td>
+</tr>
+<tr>
+<td>Appointment Management</td>
+<td>Book, update, or cancel appointments.</td>
+</tr>
+<tr>
+<td>Database Management</td>
+<td>PostgreSQL used for storing all relational data securely.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="limitations">Limitations</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Category</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Payment System</strong></td>
+<td>No integrated online payment feature in the current version.</td>
+</tr>
+<tr>
+<td><strong>Multi-Clinic Support</strong></td>
+<td>Currently supports a single clinic setup only.</td>
+</tr>
+<tr>
+<td><strong>Offline Access</strong></td>
+<td>Requires an active internet connection to access features.</td>
+</tr>
+<tr>
+<td><strong>Real-Time Chat</strong></td>
+<td>No direct messaging or live consultation feature between doctor and patient.</td>
+</tr>
+<tr>
+<td><strong>AI Recommendation</strong></td>
+<td>Lacks intelligent doctor or time-slot recommendations (future plan).</td>
+</tr>
+</tbody>
+</table>
+<h2 id="benefits">Benefits</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Aspect</strong></th>
+<th><strong>Benefit</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Automation</strong></td>
+<td>Reduces manual work of managing appointments and records.</td>
+</tr>
+<tr>
+<td><strong>Accessibility</strong></td>
+<td>Patients can book and manage appointments from anywhere.</td>
+</tr>
+<tr>
+<td><strong>Transparency</strong></td>
+<td>Doctors and patients can view real-time appointment status.</td>
+</tr>
+<tr>
+<td><strong>Security</strong></td>
+<td>Role-based access control and encrypted data storage.</td>
+</tr>
+<tr>
+<td><strong>Efficiency</strong></td>
+<td>Streamlined workflows reduce waiting times and errors.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="future-scope">Future Scope</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Feature</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Payment Gateway Integration</strong></td>
+<td>Add online consultation fees and automated billing using Razorpay/Stripe.</td>
+</tr>
+<tr>
+<td><strong>Teleconsultation (Video Call)</strong></td>
+<td>Integrate online video meetings between doctors and patients.</td>
+</tr>
+<tr>
+<td><strong>AI-Based Appointment Recommendation</strong></td>
+<td>Suggest best available time slots or doctors using AI models.</td>
+</tr>
+<tr>
+<td><strong>Chatbot Support</strong></td>
+<td>Use Amazon Lex or Dialogflow to assist patients with queries and booking.</td>
+</tr>
+<tr>
+<td><strong>Analytics Dashboard</strong></td>
+<td>Generate detailed insights for admin — patient trends, peak timings, etc.</td>
+</tr>
+<tr>
+<td><strong>Multi-Clinic System</strong></td>
+<td>Enable multiple doctors or clinics under one platform.</td>
+</tr>
+<tr>
+<td><strong>IoT / Smart Health Integration</strong></td>
+<td>Connect wearable devices for health data syncing.</td>
+</tr>
+<tr>
+<td><strong>Voice-Enabled Booking</strong></td>
+<td>Allow patients to book via voice commands or IVR system.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="7-summary"><strong>7. Summary</strong></h2>
+<p>The MediLink Functional Description outlines how the system operates at a high level connecting Admins, Doctors, and Patients through a single digital interface.
+It describes the system’s workflow, architecture, and functionality:</p>
+<ul>
+<li>Automation of clinic operations</li>
+<li>Secure data management with PostgreSQL</li>
+<li>Efficient communication using FastAPI</li>
+<li>Mobile accessibility via PWA</li>
+</ul>
+<p>MediLink delivers a comprehensive, scalable, and modern solution for digital appointment management designed to enhance efficiency, reduce manual workload, and improve patient experience.</p>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script></body>
+</html>

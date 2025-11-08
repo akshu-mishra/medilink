@@ -457,13 +457,16 @@ It replaces manual appointment handling with an automated and transparent workfl
 </tr>
 </tbody>
 </table>
-<h2 id="business-rules"><strong>Business Rules</strong></h2>
+<h2 id="business-rules">Business Rules</h2>
 <ol>
-<li>Each appointment must be associated with one registered doctor and one registered patient.</li>
-<li>A doctor cannot approve overlapping appointments.</li>
-<li>Appointment cancellation is allowed only before the scheduled time.</li>
-<li>Only admins can modify or delete doctor records.</li>
-<li>A patient can book appointments only for time slots that are at least 1 hour ahead of the current time.</li>
+<li>Each appointment must be associated with one registered doctor and one registered patient.  </li>
+<li>A doctor cannot approve overlapping appointments or create duplicate time slots.   </li>
+<li>Only admins can create, modify or delete doctor records from the system.  </li>
+<li>A patient can book appointments only for time slots that are at least 1 hour ahead of the current time.  </li>
+<li>A doctor can cancel an approved appointment only up to 30 minutes before the scheduled time.  </li>
+<li>If a request remains unapproved within 30 minutes of the slot, the system automatically sends a suggestion message to the patient with alternative doctors and available slots.  </li>
+<li>The system must automatically update appointment status upon approval, rejection, or cancellation.  </li>
+<li>All appointment and slot operations must be recorded in the activity logs for audit and consistency.  </li>
 </ol>
 <h2 id="3-admin-business-use-case"><strong>3. Admin Business Use Case</strong></h2>
 <h3 id="use-case-manage-doctor-data"><strong>Use Case: Manage Doctor Data</strong></h3>

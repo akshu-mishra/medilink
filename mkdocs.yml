@@ -13,6 +13,7 @@ nav:
   - Introduction: introduction.md
   - Functional Use Cases: functional_usecase.md
   - Bussiness Use Cases: usecases.md
+  - Schema Design: schema_design.md
 
 plugins:
   - search

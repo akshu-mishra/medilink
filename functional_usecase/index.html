@@ -473,11 +473,6 @@ The system uses JWT tokens for session management and role-based access control.
 <td>Token refresh triggered</td>
 <td>“Session expired. Please log in again.”</td>
 </tr>
-<tr>
-<td>Network failure</td>
-<td>Frontend retry logic triggered</td>
-<td>“Network issue. Try again later.”</td>
-</tr>
 </tbody>
 </table>
 <h2 id="4-fuc-03-manage-appointment-slots-doctor"><strong>4. FUC-03 – Manage Appointment Slots (Doctor)</strong></h2>
@@ -485,18 +480,22 @@ The system uses JWT tokens for session management and role-based access control.
 Allows doctors to define their available consultation slots, which patients can later view and book.</p>
 <div class="mermaid">flowchart TD
     A["Doctor Logs In"] --&gt; B["Access 'Manage Slots' Section"]
-    B --&gt; C["Add / Edit / Delete Time Slots"]
-    C --&gt; D["Frontend Sends API Request (POST /slots)"]
-    D --&gt; E["FastAPI Validates Slot Data"]
-    E --&gt; F{"Validation Passed?"}
-    F --&gt;|Yes| G["Save Slots in Database"]
-    F --&gt;|No| H["Return Error Message"]
-    G --&gt; I["Show Success message to Doctor"]
+    B --&gt; C["Select Date for Slot Management"]
+    C --&gt; D["View Predefined 30-Minute Time Slots (Checkboxes)"]
+    D --&gt; E["Tick / Untick Slots to Mark Availability"]
+    E --&gt; F["Optionally Edit Slot Date or Availability (Not Time)"]
+    F --&gt; G["Frontend Sends API Request (POST /slots)"]
+    G --&gt; H["FastAPI Validates Slot Data (Check duplicates, date validity)"]
+    H --&gt; I{"Validation Passed?"}
+    I --&gt;|Yes| J["Save Slots / Updates in Database"]
+    I --&gt;|No| K["Return Error Message (e.g., Duplicate Slot or Invalid Date)"]
+    J --&gt; L["Show Success Message to Doctor"]
+
 </div>
 <h3 id="validation-rules"><strong>Validation Rules:</strong></h3>
 <ul>
-<li>No overlapping slots allowed.</li>
-<li>Slot date/time must be valid (future).</li>
+<li>No duplicate slots.</li>
+<li>Slot date must be todat or future.</li>
 <li>Slots linked to the logged-in doctor’s ID.</li>
 </ul>
 <h2 id="5-fuc-04-book-appointment-patient"><strong>5. FUC-04 – Book Appointment (Patient)</strong></h2>
@@ -508,8 +507,8 @@ The system stores it as “Pending” until reviewed by the doctor.</p>
     B --&gt; C["Select Doctor &amp; Available Slot"]
     C --&gt; D["Click 'Book Appointment'"]
     D --&gt; E["System Saves Request with Status = Pending and slot color = Yellow"]
-    E --&gt; F["Doctor Receives Notification"]
-    F --&gt; G["Patient Receives Confirmation Message"]
+    E --&gt; F["Doctor Receives Request"]
+    F --&gt; G["Patient Dashboard updates"]
 </div>
 <h3 id="slot-visualization-and-booking-behavior"><strong>Slot Visualization and Booking Behavior</strong></h3>
 <p>To ensure a smooth, conflict-free appointment booking process, the MediLink system implements a color-coded slot visualization mechanism.<br/>
@@ -540,7 +539,7 @@ Each color represents a distinct slot status and dynamically changes based on us
 </tr>
 <tr>
 <td>⚫ Grey</td>
-<td>Doctor Busy / Rejected</td>
+<td>Doctor inactive / Rejected a request</td>
 <td>Slot becomes unavailable because the doctor rejected the request or marked themselves busy.</td>
 </tr>
 </tbody>
@@ -552,8 +551,8 @@ Each color represents a distinct slot status and dynamically changes based on us
 <li>If the doctor <strong>approves</strong> the appointment, the slot turns <strong>Green (Confirmed)</strong>.  </li>
 <li>If the doctor <strong>rejects</strong> the appointment, the slot turns <strong>Grey (Busy)</strong>.  </li>
 <li>If the <strong>patient cancels</strong> a booked appointment, the slot automatically reverts to <strong>White (Available)</strong> and becomes available to all patients again.  </li>
-<li>When a doctor marks themselves as <strong>Busy</strong>, all related slots appear <strong>Grey (Busy)</strong> and are temporarily disabled for booking.  </li>
-<li>If a slot remains <strong>unapproved within 30 minutes of the scheduled time</strong>, the system automatically suggests alternative available slots or doctors to the patient.</li>
+<li>When a doctor marks themselves as <strong>Inactive</strong>, all related slots appear <strong>Grey (Busy)</strong> and are temporarily disabled for booking.  </li>
+<li>If a slot remains <strong>unapproved within 30 minutes of the scheduled time</strong>, the system automatically send a alert message <em>"Sorry, the doctor is busy with an emergency case. Please book another available time." to the patient and reject the appointment, slot turns </em><em>Grey (Busy)</em>*.</li>
 </ol>
 <p>This approach ensures clear communication of slot status, prevents double booking, and maintains transparency for both patients and doctors.</p>
 <h3 id="error-handling"><strong>Error Handling</strong></h3>
@@ -590,7 +589,7 @@ Doctors review incoming requests and either approve, reject, or suggest new timi
     A["Doctor Opens Dashboard"] --&gt; B["Views Pending Requests"]
     B --&gt; C{"Any Conflicts or Priorities?"}
     C --&gt;|No| D["Approve Appointment"]
-    C --&gt;|Yes| E["Reject and Suggest New Slot"]
+    C --&gt;|Yes| E["Reject and show alert message *'Sorry, the doctor is busy with an emergency case. Please book another available time.'* to patient dashboard"]
     D --&gt; F["Update Status = Approved and Patient side slot color = Green"]
     E --&gt; G["Update Status = Rejected and slot color = Grey (BUSY)"]
     F --&gt; H["Update Patient"]

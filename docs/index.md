@@ -36,12 +36,12 @@ To create a **secure, efficient, and user-friendly** platform where:
 
 ## **Overview of MediLink**
 
-- **MediLink** is a web-based and mobile-compatible system for managing doctor appointments digitally.  
-- Developed using **FastAPI**, **PostgreSQL**, **HTML**, **CSS**, and **JavaScript** with **PWA** support.  
-- Connects **Admins**, **Doctors**, and **Patients** in a single, secure platform.  
+- MediLink is a web-based and mobile-compatible system for managing doctor appointments digitally.  
+- Developed using FastAPI, PostgreSQL, HTML, CSS, and JavaScript with PWA support.  
+- Connects Admins, Doctors, and Patients in a single, secure platform.  
 - Automates appointment booking, approval, and cancellation processes.  
-- Allows **doctors** to create time slots and manage schedules efficiently.  
-- Enables **patients** to register, book, and track their appointments online. 
+- Allows doctors to create time slots and manage schedules efficiently.  
+- Enables patients to register, book, and track their appointments online. 
 - Reduces manual workload, double bookings, and scheduling errors.  
-- Provides **real-time updates**, **role-based access**, and **data security** through FastAPI and PostgreSQL.  
-- Designed to be **scalable, efficient, and user-friendly** for individual doctors or small clinics.
+- Provides real-time updates, role-based access, and data security through FastAPI and PostgreSQL.  
+- Designed to be scalable, efficient, and user-friendly for individual doctors or small clinics.

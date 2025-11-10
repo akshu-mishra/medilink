@@ -584,7 +584,7 @@ Doctors review incoming requests and either approve, reject, or suggest new timi
     C --&gt;|No| D["Approve Appointment"]
     C --&gt;|Yes| E["Reject and Suggest New Slot"]
     D --&gt; F["Update Status = Approved and Patient side slot color = Green"]
-    E --&gt; G["Update Status = Rejected / Rescheduled and slot color = Grey (BUSY)"]
+    E --&gt; G["Update Status = Rejected and slot color = Grey (BUSY)"]
     F --&gt; H["Update Patient"]
     G --&gt; H
     H --&gt; I["Appointment List Updated in DB"]

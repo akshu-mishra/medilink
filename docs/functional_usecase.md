@@ -118,7 +118,7 @@ flowchart TD
     C -->|No| D["Approve Appointment"]
     C -->|Yes| E["Reject and Suggest New Slot"]
     D --> F["Update Status = Approved and Patient side slot color = Green"]
-    E --> G["Update Status = Rejected / Rescheduled and slot color = Grey (BUSY)"]
+    E --> G["Update Status = Rejected and slot color = Grey (BUSY)"]
     F --> H["Update Patient"]
     G --> H
     H --> I["Appointment List Updated in DB"]

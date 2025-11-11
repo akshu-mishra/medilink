@@ -252,7 +252,7 @@
     UI--&gt;&gt;Patient: Show "Pending" (slot color = Yellow)
   else slot not available
     Backend--&gt;&gt;UI: 400 {detail: "Slot unavailable"}
-    UI--&gt;&gt;Patient: Show "Slot unavailable, please choose another time"}
+    UI--&gt;&gt;Patient: Show {"Slot unavailable, please choose another time"}
   end
 
   Note over Doctor,Backend: Doctor reviews and acts

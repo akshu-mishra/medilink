@@ -11,14 +11,10 @@ It replaces manual appointment handling with an automated and transparent workfl
 ## **Business Rules**
 
 1. Each appointment must be associated with one registered doctor and one registered patient.  
-2. A doctor cannot approve overlapping appointments or create duplicate time slots.   
-3. Only admins can create, modify or delete doctor records from the system.  
-4. A patient can book appointments only for time slots that are at least 1 hour ahead of the current time.  
-5. A doctor can cancel an approved appointment only up to 30 minutes before the scheduled time.  
-6. If a request remains unapproved within 30 minutes of the slot, the system sends alert message *'Sorry, the doctor is busy with an emergency case. Please book another available time.'* to patient dashboard.  
-7. The system must automatically update appointment status upon approval, rejection, or cancellation.  
-8. If a doctor has pre-scheduled appointments but leaves the hospital due to any issue, another available doctor will take over the appointments for that time slot, and the patient will be notified through the app. The patient will have the option to cancel the appointment if they do not wish to continue with the substitute doctor.  
-9. If a doctor rejects an appointment and the priority work gets cancelled, the system won’t reschedule the meeting, the slot will be marked as busy.
+2. Only admins can create, modify or delete doctor records from the system.  
+3. A patient can book appointments only for time slots that are at least 1 hour ahead of the current time.  
+4. A doctor can cancel an approved appointment only up to 30 minutes before the scheduled time.  
+5. If a doctor rejects an appointment and the priority work gets cancelled, the system won’t reschedule the meeting, the slot will be marked as busy.
  
 
 ## **2. Business Use Case Summary**
@@ -171,6 +167,12 @@ flowchart TD
 | Invalid booking input | Request rejected | “Invalid details. Please select a valid date/time.” |
 | Slot already booked | Backend validation fails | “Slot no longer available. Please choose another time.” |
 | Network or DB error | Rollback operation | “Booking failed. Try again later.” |
+
+### **Future Add-ons**
+1. A doctor cannot approve overlapping appointments or create duplicate time slots.   
+2. If a request remains unapproved within 30 minutes of the slot, the system sends alert message 'Sorry, the doctor is busy with an emergency case. Please book another available time.' to patient dashboard.  
+3. The system must automatically update appointment status upon approval, rejection, or cancellation.  
+4. If a doctor has pre-scheduled appointments but leaves the hospital due to any issue, another available doctor will take over the appointments for that time slot, and the patient will be notified through the app. The patient will have the option to cancel the appointment if they do not wish to continue with the substitute doctor.  
 
 ## **7. Business Benefits Summary**
 

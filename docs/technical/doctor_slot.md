@@ -25,18 +25,18 @@ sequenceDiagram
   Doctor->>UI: Open "Manage Slots" (select date)
   UI->>UI: Render predefined 30-min checkboxes
   Doctor->>UI: Tick / Untick slots, update date/availability
-  UI->>Backend: POST /slots {doctor_id, date, [slot_times]}
+  UI->>Backend: POST /slots {doctor_id, date, status}
   Backend->>DB: BEGIN TRANSACTION
   Backend->>DB: INSERT / UPDATE slots (check duplicates)
   alt commit success
     DB-->>Backend: OK
     Backend->>DB: COMMIT
-    Backend-->>UI: 200 {message: "Slots saved"}
+    Backend-->>UI: 200 {message: "Slots saved successfully"}
     UI-->>Doctor: Show success message
   else commit fail / validation error
     DB-->>Backend: ERROR
     Backend->>DB: ROLLBACK
-    Backend-->>UI: 500 {detail: "Database error" or 400 validation}
+    Backend-->>UI: 400{"Detail: validation}
     UI-->>Doctor: Show error message (e.g., "Slot already exists")
   end
 ```

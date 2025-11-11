@@ -37,7 +37,7 @@ erDiagram
 		varchar(100) name  ""  
 		varchar(10) gender  ""  
 		date dob  ""    
-		varchar(255) blood_group  ""  
+		varchar(10) blood_group  ""  
 		timestamp created_at  ""  
 		timestamp updated_at  ""  
 		timestamp deleted_at  ""  
@@ -55,7 +55,7 @@ erDiagram
 		time start_time  ""  
 		time end_time  ""  
 		int consultation_fee  ""  
-		varchar(20) status  ""  
+		boolean status  ""  
 		timestamp created_at  ""  
 		timestamp updated_at  ""  
 		timestamp deleted_at  ""  
@@ -91,9 +91,7 @@ erDiagram
 %% INDEX: slot_id (prevent double-booking)
 	prescriptions {
 		int id PK "auto-increment"  
-		int appointment_id FK "index(appointment_id)"  
-		int doctor_id FK ""  
-		int patient_id FK ""  
+		int appointment_id FK "index(appointment_id)"    
 		text diagnosis  ""  
 		text consultation_details  ""  
 		text doctor_notes(optional)  ""  

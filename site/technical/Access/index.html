@@ -134,6 +134,21 @@
   </span>
 </a>
 </li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+<span class="md-ellipsis">
+    Technical Design
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            Technical Design
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../schema_design/">
 <span class="md-ellipsis">
@@ -142,23 +157,8 @@
   </span>
 </a>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
-<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
-<span class="md-ellipsis">
-    Technical Design
-    
-  </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="true" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_6">
-<span class="md-nav__icon md-icon"></span>
-            Technical Design
-          </label>
-<ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../schema/">
+<a class="md-nav__link" href="../AWS/">
 <span class="md-ellipsis">
     Architecture
     
@@ -168,7 +168,7 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../Data_Flow/">
 <span class="md-ellipsis">
-    Data Flow
+    Data Flow Diagram
     
   </span>
 </a>
@@ -245,7 +245,7 @@
   DB--&gt;&gt;Backend: user record
   alt credentials valid
     Backend-&gt;&gt;Backend: create JWT (exp, user_id, role)
-    Backend--&gt;&gt;UI: 200 {access_token, token_type}
+    Backend--&gt;&gt;UI: 200 {access_token, referesh_token, token_type}
     UI--&gt;&gt;User: Show "Login successful"
   else invalid
     Backend--&gt;&gt;UI: 401 {detail: "Invalid username or password"}

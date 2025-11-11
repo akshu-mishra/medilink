@@ -13,10 +13,10 @@ nav:
   - Introduction: introduction.md
   - Functional Use Cases: functional_usecase.md
   - Bussiness Use Cases: usecases.md
-  - Schema Design: schema_design.md
   - Technical Design:
-      - Architecture: technical/schema.md
-      - Data Flow: technical/Data_Flow.md
+      - Schema Design: schema_design.md
+      - Architecture: technical/AWS.md
+      - Data Flow Diagram: technical/Data_Flow.md
       - Technical Stack: technical/Technical_Stack.md
       - Authentication and Authorization: technical/Access.md
       - Doctor Slot Management: technical/doctor_slot.md

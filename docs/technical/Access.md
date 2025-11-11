@@ -22,7 +22,7 @@ sequenceDiagram
   DB-->>Backend: user record
   alt credentials valid
     Backend->>Backend: create JWT (exp, user_id, role)
-    Backend-->>UI: 200 {access_token, token_type}
+    Backend-->>UI: 200 {access_token, referesh_token, token_type}
     UI-->>User: Show "Login successful"
   else invalid
     Backend-->>UI: 401 {detail: "Invalid username or password"}

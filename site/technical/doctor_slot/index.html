@@ -134,6 +134,21 @@
   </span>
 </a>
 </li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+<span class="md-ellipsis">
+    Technical Design
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            Technical Design
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../schema_design/">
 <span class="md-ellipsis">
@@ -142,23 +157,8 @@
   </span>
 </a>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
-<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
-<span class="md-ellipsis">
-    Technical Design
-    
-  </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="true" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_6">
-<span class="md-nav__icon md-icon"></span>
-            Technical Design
-          </label>
-<ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../schema/">
+<a class="md-nav__link" href="../AWS/">
 <span class="md-ellipsis">
     Architecture
     
@@ -168,7 +168,7 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../Data_Flow/">
 <span class="md-ellipsis">
-    Data Flow
+    Data Flow Diagram
     
   </span>
 </a>
@@ -246,18 +246,18 @@
   Doctor-&gt;&gt;UI: Open "Manage Slots" (select date)
   UI-&gt;&gt;UI: Render predefined 30-min checkboxes
   Doctor-&gt;&gt;UI: Tick / Untick slots, update date/availability
-  UI-&gt;&gt;Backend: POST /slots {doctor_id, date, [slot_times]}
+  UI-&gt;&gt;Backend: POST /slots {doctor_id, date, status}
   Backend-&gt;&gt;DB: BEGIN TRANSACTION
   Backend-&gt;&gt;DB: INSERT / UPDATE slots (check duplicates)
   alt commit success
     DB--&gt;&gt;Backend: OK
     Backend-&gt;&gt;DB: COMMIT
-    Backend--&gt;&gt;UI: 200 {message: "Slots saved"}
+    Backend--&gt;&gt;UI: 200 {message: "Slots saved successfully"}
     UI--&gt;&gt;Doctor: Show success message
   else commit fail / validation error
     DB--&gt;&gt;Backend: ERROR
     Backend-&gt;&gt;DB: ROLLBACK
-    Backend--&gt;&gt;UI: 500 {detail: "Database error" or 400 validation}
+    Backend--&gt;&gt;UI: 400{"Detail: validation}
     UI--&gt;&gt;Doctor: Show error message (e.g., "Slot already exists")
   end
 </div>

@@ -10,23 +10,5 @@ The token is used to authenticate subsequent API requests, ensuring that only au
 - **Admins** can manage doctor profiles and monitor system data.  
 
 If invalid credentials are provided, the system returns an **HTTP 401 Unauthorized** response, preventing access. JWT-based authentication ensures a stateless and secure communication process between the frontend and backend, maintaining data privacy and integrity throughout MediLink’s workflow.
-```mermaid
-sequenceDiagram
-  autonumber
-  participant Backend as FastAPI
-  participant DB as Database
 
-  User->>UI: Enter credentials (email, password)
-  UI->>Backend: POST /login {email, password}
-  Backend->>DB: SELECT user WHERE email = ...
-  DB-->>Backend: user record
-  alt credentials valid
-    Backend->>Backend: create JWT (exp, user_id, role)
-    Backend-->>UI: 200 {access_token, referesh_token, token_type}
-    UI-->>User: Show "Login successful"
-  else invalid
-    Backend-->>UI: 401 {detail: "Invalid username or password"}
-    UI-->>User: Show "Invalid username or password"
-  end
-
-```
+![Authentication and Authorization (using JWT)](../images/JWT.png)

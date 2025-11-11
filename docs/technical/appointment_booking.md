@@ -29,7 +29,7 @@ sequenceDiagram
     UI-->>Patient: Show "Pending" (slot color = Yellow)
   else slot not available
     Backend-->>UI: 400 {detail: "Slot unavailable"}
-    UI-->>Patient: Show "Slot unavailable, please choose another time"}
+    UI-->>Patient: Show {"Slot unavailable, please choose another time"}
   end
 
   Note over Doctor,Backend: Doctor reviews and acts

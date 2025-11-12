@@ -724,44 +724,48 @@
 The goal is to ensure that all individual components, routes, and functions work correctly and securely in isolation.</p>
 <h2 id="2-modules-under-test">2. Modules Under Test</h2>
 <ol>
-<li><strong>Authentication</strong></li>
+<li>
+<p><strong>Authentication</strong></p>
+<ul>
 <li>Register (Patient)</li>
 <li>Login (All roles)</li>
-<li>
-<p>JWT Token creation &amp; validation</p>
+<li>JWT Token creation &amp; validation</li>
+</ul>
 </li>
 <li>
 <p><strong>Authorization</strong></p>
-</li>
+<ul>
 <li>Role-based access (Admin / Doctor / Patient)</li>
-<li>
-<p>Restricted routes check</p>
+<li>Restricted routes check</li>
+</ul>
 </li>
 <li>
 <p><strong>Admin Module</strong></p>
-</li>
+<ul>
 <li>Create Doctor</li>
-<li>
-<p>View all users / doctors</p>
+<li>View all users / doctors</li>
+</ul>
 </li>
 <li>
 <p><strong>Doctor Module</strong></p>
-</li>
+<ul>
 <li>View &amp; manage appointment slots</li>
-<li>
-<p>Update profile info</p>
+<li>Update profile info</li>
+</ul>
 </li>
 <li>
 <p><strong>Patient Module</strong></p>
-</li>
-<li>
-<p>Register, view, and book appointment</p>
+<ul>
+<li>Register, view, and book appointment</li>
+</ul>
 </li>
 <li>
 <p><strong>Database Layer</strong></p>
-</li>
+<ul>
 <li>ORM Model Validation</li>
 <li>Foreign Key Mapping (user_id in doctors)</li>
+</ul>
+</li>
 </ol>
 <h2 id="3-unit-test-objectives">3. Unit Test Objectives</h2>
 <ul>

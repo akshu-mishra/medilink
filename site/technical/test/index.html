@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../Data_Flow/">
+        <link rel="prev" href="../Access/">
       
       
-        <link rel="next" href="../Access/">
+        <link rel="next" href="../doctor_slot/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Technical Stack - MediLink</title>
+        <title>Test Plan - MediLink</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#technical-stack-with-their-appropriate-versions" class="md-skip">
+        <a href="#medilink-backend-unit-test-plan" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Technical Stack
+              Test Plan
             
           </span>
         </div>
@@ -408,32 +408,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Technical Stack
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../Technical_Stack/" class="md-nav__link">
         
   
   
@@ -444,44 +422,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#summary-of-stack-utilization" class="md-nav__link">
-    <span class="md-ellipsis">
-      Summary of Stack Utilization
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#versioning-note" class="md-nav__link">
-    <span class="md-ellipsis">
-      Versioning Note
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -514,10 +454,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../test/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Test Plan
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -528,6 +490,80 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-modules-under-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Modules Under Test
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-unit-test-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Unit Test Objectives
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-test-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Test Strategy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-sample-test-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Sample Test Cases
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-test-snippet-test_authpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Test Snippet (test_auth.py)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -613,18 +649,54 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#summary-of-stack-utilization" class="md-nav__link">
+  <a href="#1-overview" class="md-nav__link">
     <span class="md-ellipsis">
-      Summary of Stack Utilization
+      1. Overview
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#versioning-note" class="md-nav__link">
+  <a href="#2-modules-under-test" class="md-nav__link">
     <span class="md-ellipsis">
-      Versioning Note
+      2. Modules Under Test
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-unit-test-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Unit Test Objectives
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-test-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Test Strategy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-sample-test-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Sample Test Cases
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-test-snippet-test_authpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Test Snippet (test_auth.py)
     </span>
   </a>
   
@@ -646,95 +718,208 @@
 
 
 
-<h1 id="technical-stack-with-their-appropriate-versions">Technical Stack with their appropriate versions</h1>
-<p>Below are the core technologies and tools used in <strong>MediLink</strong>, along with their versions, usage areas, and reasons for selection.</p>
+<h1 id="medilink-backend-unit-test-plan">Medilink Backend - Unit Test Plan</h1>
+<h2 id="1-overview">1. Overview</h2>
+<p>This document outlines the <strong>Unit Testing Plan</strong> for the <strong>Medilink Backend</strong> — a healthcare management system developed using <strong>FastAPI</strong>, <strong>JWT authentication</strong>, and <strong>PostgreSQL</strong>.<br />
+The goal is to ensure that all individual components, routes, and functions work correctly and securely in isolation.</p>
+<h2 id="2-modules-under-test">2. Modules Under Test</h2>
+<ol>
+<li>
+<p><strong>Authentication</strong></p>
+<ul>
+<li>Register (Patient)</li>
+<li>Login (All roles)</li>
+<li>JWT Token creation &amp; validation</li>
+</ul>
+</li>
+<li>
+<p><strong>Authorization</strong></p>
+<ul>
+<li>Role-based access (Admin / Doctor / Patient)</li>
+<li>Restricted routes check</li>
+</ul>
+</li>
+<li>
+<p><strong>Admin Module</strong></p>
+<ul>
+<li>Create Doctor</li>
+<li>View all users / doctors</li>
+</ul>
+</li>
+<li>
+<p><strong>Doctor Module</strong></p>
+<ul>
+<li>View &amp; manage appointment slots</li>
+<li>Update profile info</li>
+</ul>
+</li>
+<li>
+<p><strong>Patient Module</strong></p>
+<ul>
+<li>Register, view, and book appointment</li>
+</ul>
+</li>
+<li>
+<p><strong>Database Layer</strong></p>
+<ul>
+<li>ORM Model Validation</li>
+<li>Foreign Key Mapping (user_id in doctors)</li>
+</ul>
+</li>
+</ol>
+<h2 id="3-unit-test-objectives">3. Unit Test Objectives</h2>
+<ul>
+<li>Validate that all API endpoints return expected HTTP status codes.  </li>
+<li>Verify correct JWT generation and decoding.  </li>
+<li>Ensure bcrypt password hashing and verification work correctly.  </li>
+<li>Test all CRUD operations for models.  </li>
+<li>Mock database queries and ensure functions return valid responses.  </li>
+<li>Verify exceptions and input validation handling.</li>
+</ul>
+<h2 id="4-test-strategy">4. Test Strategy</h2>
 <table>
 <thead>
 <tr>
-<th><strong>Technology / Tool</strong></th>
-<th><strong>Version</strong></th>
-<th><strong>Usage in MediLink</strong></th>
-<th><strong>Reason for Choosing This Version</strong></th>
+<th>Type</th>
+<th>Description</th>
+<th>Tool</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>HTML5</strong></td>
-<td>5.2</td>
-<td>Used for structuring all web pages such as Login, Register, Landing, and Dashboard.</td>
-<td>HTML 5.2 provides semantic elements and full browser support for PWA integration and accessibility.</td>
+<td><strong>Positive Tests</strong></td>
+<td>Verify valid inputs and correct outputs.</td>
+<td>Pytest</td>
 </tr>
 <tr>
-<td><strong>CSS3</strong></td>
-<td>3.0</td>
-<td>For page styling, layouts, and responsive UI design.</td>
-<td>Essential for responsive design.</td>
+<td><strong>Negative Tests</strong></td>
+<td>Invalid inputs, wrong credentials, or unauthorized access.</td>
+<td>Pytest</td>
 </tr>
 <tr>
-<td><strong>JavaScript (ECMAScript 2022)</strong></td>
-<td>ES13 / 2022</td>
-<td>Manages dynamic UI updates, API requests, and form validation.</td>
-<td>ES2022 provides stable modern JS features like async/await, top-level await, and modular imports for smooth API integration.</td>
+<td><strong>Mock Tests</strong></td>
+<td>Mock DB and JWT to test function logic independently.</td>
+<td>unittest.mock</td>
 </tr>
 <tr>
-<td><strong>Bootstrap</strong></td>
-<td>5.3.3</td>
-<td>For responsive design, navigation, and reusable UI components.</td>
-<td>Bootstrap 5.3 is stable, mobile-first and improve performance.</td>
+<td><strong>Validation Tests</strong></td>
+<td>Test schema validation (Pydantic).</td>
+<td>Pytest</td>
 </tr>
 <tr>
-<td><strong>FastAPI</strong></td>
-<td>0.115.2</td>
-<td>Backend framework handling authentication, appointment APIs, and slot management.</td>
-<td>Latest stable release optimized for async I/O and built-in Pydantic v2 support.</td>
-</tr>
-<tr>
-<td><strong>Uvicorn</strong></td>
-<td>0.30.3</td>
-<td>ASGI server for running the FastAPI backend.</td>
-<td>Lightweight, fast, and compatible with FastAPI 0.115 for concurrent request handling.</td>
-</tr>
-<tr>
-<td><strong>PostgreSQL</strong></td>
-<td>15.6</td>
-<td>Relational database for storing users, doctors, appointments, and slot data.</td>
-<td>PostgreSQL 15.6 is stable, ACID-compliant, and offers strong performance with indexing and query optimization.</td>
-</tr>
-<tr>
-<td><strong>SQLAlchemy</strong></td>
-<td>2.0.36</td>
-<td>ORM for interacting between FastAPI and PostgreSQL.</td>
-<td>SQLAlchemy 2.0 provides full async support and modern syntax compatible with Python 3.10+.</td>
-</tr>
-<tr>
-<td><strong>Pydantic</strong></td>
-<td>2.5.3</td>
-<td>Used for request/response model validation in FastAPI.</td>
-<td>Pydantic 2.5 improves validation performance and integrates seamlessly with FastAPI 0.115.</td>
-</tr>
-<tr>
-<td><strong>Python</strong></td>
-<td>3.10.14</td>
-<td>Core backend programming language.</td>
-<td>Python 3.10 introduces structural pattern matching and better async features, ensuring compatibility with FastAPI.</td>
-</tr>
-<tr>
-<td><strong>PWA (Progressive Web App)</strong></td>
-<td>2023 Standard</td>
-<td>Adds offline access and app install functionality for users.</td>
-<td>PWA standards (2023) ensure secure HTTPS, caching, and installable UI for all modern browsers.</td>
+<td><strong>Error Handling</strong></td>
+<td>Verify correct exception messages and status codes.</td>
+<td>FastAPI TestClient</td>
 </tr>
 </tbody>
 </table>
-<h3 id="summary-of-stack-utilization">Summary of Stack Utilization</h3>
-<ul>
-<li><strong>Frontend:</strong> HTML5, CSS3, JavaScript (ES6+), Bootstrap 5.3, PWA  </li>
-<li><strong>Backend:</strong> FastAPI 0.115, Uvicorn 0.30, SQLAlchemy 2.0, Pydantic 2.5  </li>
-<li><strong>Database:</strong> PostgreSQL 15  </li>
-<li><strong>Language:</strong> Python 3.10  </li>
-</ul>
-<h3 id="versioning-note">Versioning Note</h3>
-<p>All chosen versions are <strong>stable releases</strong> as of <strong>November 2025</strong>, ensuring long-term compatibility, active support, and smooth integration across MediLink’s modules.</p>
+<h2 id="5-sample-test-cases">5. Sample Test Cases</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Module</th>
+<th>Test Scenario</th>
+<th>Expected Result</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UT01</td>
+<td>Auth</td>
+<td>Register new patient</td>
+<td>201 Created, JWT returned</td>
+<td></td>
+</tr>
+<tr>
+<td>UT02</td>
+<td>Auth</td>
+<td>Login with valid credentials</td>
+<td>200 OK + Token</td>
+<td></td>
+</tr>
+<tr>
+<td>UT03</td>
+<td>Auth</td>
+<td>Login with wrong password</td>
+<td>401 Unauthorized</td>
+<td></td>
+</tr>
+<tr>
+<td>UT04</td>
+<td>Auth</td>
+<td>Verify JWT token validation</td>
+<td>200 OK</td>
+<td></td>
+</tr>
+<tr>
+<td>UT05</td>
+<td>Authorization</td>
+<td>Doctor tries to create doctor</td>
+<td>403 Forbidden</td>
+<td></td>
+</tr>
+<tr>
+<td>UT06</td>
+<td>Admin</td>
+<td>Admin creates new doctor</td>
+<td>201 Created</td>
+<td></td>
+</tr>
+<tr>
+<td>UT07</td>
+<td>Patient</td>
+<td>Book appointment with valid slot</td>
+<td>200 OK</td>
+<td></td>
+</tr>
+<tr>
+<td>UT08</td>
+<td>DB</td>
+<td>Validate user-doctor foreign key</td>
+<td>Pass</td>
+<td></td>
+</tr>
+<tr>
+<td>UT09</td>
+<td>Security</td>
+<td>Password hash comparison</td>
+<td>True</td>
+<td></td>
+</tr>
+<tr>
+<td>UT10</td>
+<td>Error Handling</td>
+<td>Missing field in request</td>
+<td>422 Validation Error</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="6-test-snippet-test_authpy">6. Test Snippet (test_auth.py)</h2>
+<pre><code class="language-bash">from fastapi.testclient import TestClient
+from app.main import app
+
+client = TestClient(app)
+
+def test_patient_register():
+    response = client.post(&quot;/register&quot;, json={
+        &quot;email&quot;: &quot;patient1@medilink.com&quot;,
+        &quot;password&quot;: &quot;Password@123&quot;,
+        &quot;login_as&quot;: &quot;patient&quot;
+    })
+    assert response.status_code == 201
+    assert &quot;access_token&quot; in response.json()
+
+def test_login_with_invalid_password():
+    response = client.post(&quot;/login&quot;, json={
+        &quot;email&quot;: &quot;patient1@medilink.com&quot;,
+        &quot;password&quot;: &quot;wrongpass&quot;
+    })
+    assert response.status_code == 401
+
+</code></pre>
 
 
 

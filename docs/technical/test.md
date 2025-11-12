@@ -9,28 +9,34 @@ The goal is to ensure that all individual components, routes, and functions work
 ## 2. Modules Under Test
 
 1. **Authentication**
-   - Register (Patient)
-   - Login (All roles)
-   - JWT Token creation & validation
+
+    - Register (Patient)
+    - Login (All roles)
+    - JWT Token creation & validation
 
 2. **Authorization**
-   - Role-based access (Admin / Doctor / Patient)
-   - Restricted routes check
+
+    - Role-based access (Admin / Doctor / Patient)
+    - Restricted routes check
 
 3. **Admin Module**
-   - Create Doctor
-   - View all users / doctors
+
+    - Create Doctor
+    - View all users / doctors
 
 4. **Doctor Module**
-   - View & manage appointment slots
-   - Update profile info
+
+    - View & manage appointment slots
+    - Update profile info
 
 5. **Patient Module**
-   - Register, view, and book appointment
+
+    - Register, view, and book appointment
 
 6. **Database Layer**
-   - ORM Model Validation
-   - Foreign Key Mapping (user_id in doctors)
+
+    - ORM Model Validation
+    - Foreign Key Mapping (user_id in doctors)
 
 
 ## 3. Unit Test Objectives

@@ -763,10 +763,27 @@ The table below outlines possible failure points, the system’s response, and t
 </table>
 <h3 id="future-add-ons"><strong>Future Add-ons</strong></h3>
 <ol>
-<li>A doctor cannot approve overlapping appointments or create duplicate time slots.   </li>
-<li>If a request remains unapproved within 30 minutes of the slot, the system sends alert message 'Sorry, the doctor is busy with an emergency case. Please book another available time.' to patient dashboard.  </li>
-<li>The system must automatically update appointment status upon approval, rejection, or cancellation.  </li>
-<li>If a doctor has pre-scheduled appointments but leaves the hospital due to any issue, another available doctor will take over the appointments for that time slot, and the patient will be notified through the app. The patient will have the option to cancel the appointment if they do not wish to continue with the substitute doctor.  </li>
+<li>
+<p><strong>Prevent Overlapping Schedules</strong><br/>
+   Doctors will not be able to approve overlapping appointments or create duplicate time slots.</p>
+</li>
+<li>
+<p><strong>Automatic Alerts for Pending Approvals</strong><br/>
+   If an appointment request remains unapproved for 30 minutes, the system will automatically notify the patient with the message:<br/>
+<em>“Sorry, the doctor is busy with an emergency case. Please book another available time.”</em></p>
+</li>
+<li>
+<p><strong>Automated Appointment Status Updates</strong><br/>
+   The system will automatically update the appointment status whenever a doctor approves, rejects, or cancels a request.</p>
+</li>
+<li>
+<p><strong>Doctor Substitution Mechanism</strong><br/>
+   If a doctor becomes unavailable during scheduled appointments, the system will assign the slot to another available doctor and notify the patient. The patient may continue with the substitute doctor or cancel the appointment.</p>
+</li>
+<li>
+<p><strong>Dual Role Functionality</strong><br/>
+   Doctors will have the ability to enroll themselves as patients and access patient-specific features.</p>
+</li>
 </ol>
 <h2 id="7-business-benefits-summary"><strong>7. Business Benefits Summary</strong></h2>
 <table>

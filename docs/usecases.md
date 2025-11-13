@@ -169,10 +169,23 @@ flowchart TD
 | Network or DB error | Rollback operation | “Booking failed. Try again later.” |
 
 ### **Future Add-ons**
-1. A doctor cannot approve overlapping appointments or create duplicate time slots.   
-2. If a request remains unapproved within 30 minutes of the slot, the system sends alert message 'Sorry, the doctor is busy with an emergency case. Please book another available time.' to patient dashboard.  
-3. The system must automatically update appointment status upon approval, rejection, or cancellation.  
-4. If a doctor has pre-scheduled appointments but leaves the hospital due to any issue, another available doctor will take over the appointments for that time slot, and the patient will be notified through the app. The patient will have the option to cancel the appointment if they do not wish to continue with the substitute doctor.  
+
+1. **Prevent Overlapping Schedules**  
+   Doctors will not be able to approve overlapping appointments or create duplicate time slots.
+
+2. **Automatic Alerts for Pending Approvals**  
+   If an appointment request remains unapproved for 30 minutes, the system will automatically notify the patient with the message:  
+   *“Sorry, the doctor is busy with an emergency case. Please book another available time.”*
+
+3. **Automated Appointment Status Updates**  
+   The system will automatically update the appointment status whenever a doctor approves, rejects, or cancels a request.
+
+4. **Doctor Substitution Mechanism**  
+   If a doctor becomes unavailable during scheduled appointments, the system will assign the slot to another available doctor and notify the patient. The patient may continue with the substitute doctor or cancel the appointment.
+
+5. **Dual Role Functionality**  
+   Doctors will have the ability to enroll themselves as patients and access patient-specific features.
+
 
 ## **7. Business Benefits Summary**
 

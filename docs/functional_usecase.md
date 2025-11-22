@@ -9,9 +9,9 @@ Each function from appointment scheduling to data validation is automated to ens
 |------------------|-------------------|------------------------|--------------------------|----------------------|
 | **FUC-01** | User Authentication | Admin, Doctor, Patient | Secure login and registration through JWT-based authentication. | Access granted after validation. |
 | **FUC-02** | Manage Doctor Records | Admin | Add, update, or delete doctor information in the database. | Records updated successfully. |
-| **FUC-03** | Manage Appointment Slots | Doctor | Create or edit time slots for patient booking. | Slots stored and visible to patients. |
+| **FUC-03** | Manage Appointment Slots | Doctor | Auto-Create or selct time slots for patient booking. | Slots stored and visible to patients. |
 | **FUC-04** | Book Appointment | Patient | Select a doctor and time slot to request an appointment. | Request saved as “Pending.” |
-| **FUC-05** | Approve/Reject Appointment | Doctor | Approve, reject, or reschedule patient requests. | Appointment status updated. |
+| **FUC-05** | Approve/Reject Appointment | Doctor | Approve or reject patient requests. | Appointment status updated. |
 | **FUC-06** | Cancel Appointment | Patient | Cancel previously booked appointments. | Slot becomes available again. |
 | **FUC-07** | Logout | All Users | End active session securely. | Session terminated, user redirected to login. |
 
@@ -63,71 +63,7 @@ flowchart TD
 - Slot date must be todat or future.
 - Slots linked to the logged-in doctor’s ID.
 
-## **5. FUC-04 – Book Appointment (Patient)**
-**Description**
-Patient selects an available slot and submits an appointment request.
-The system stores it as “Pending” until reviewed by the doctor.
-```mermaid
-flowchart TD
-    A["Patient Logs In"] --> B["Views Doctor List"]
-    B --> C["Select Doctor & Available Slot"]
-    C --> D["Click 'Book Appointment'"]
-    D --> E["System Saves Request with Status = Pending and slot color = Yellow"]
-    E --> F["Doctor Receives Request"]
-    F --> G["Patient Dashboard updates"]
-```
-
-### **Slot Visualization and Booking Behavior**
-
-To ensure a smooth, conflict-free appointment booking process, the MediLink system implements a color-coded slot visualization mechanism.  
-Each color represents a distinct slot status and dynamically changes based on user and system actions.
-
-| **Color** | **Slot Status** | **Description / System Behavior** |
-|------------|----------------|-----------------------------------|
-| ⚪ White | Available | Slot is open for booking and visible to all patients. |
-| 🟡 Yellow | Pending | Slot has been booked by a patient but is awaiting doctor approval. |
-| 🟢 Green | Confirmed | Appointment has been approved by the doctor. |
-| ⚫ Grey | Doctor inactive / Rejected a request | Slot becomes unavailable because the doctor rejected the request or marked themselves busy. |
-
-
-**Behavioral Rules:**
-
-1. When a slot is created, it appears **White (Available)** to all patients.  
-2. Once a patient books a slot, it turns **Yellow (Pending)** and become disable to all patients.  
-3. If the doctor **approves** the appointment, the slot turns **Green (Confirmed)**.  
-4. If the doctor **rejects** the appointment, the slot turns **Grey (Busy)**.  
-5. If the **patient cancels** a booked appointment, the slot automatically reverts to **White (Available)** and becomes available to all patients again.  
-6. When a doctor marks themselves as **Inactive**, all related slots appear **Grey (Busy)** and are temporarily disabled for booking.  
-7. If a slot remains **unapproved within 30 minutes of the scheduled time**, the system automatically send a alert message *"Sorry, the doctor is busy with an emergency case. Please book another available time." to the patient and reject the appointment, slot turns **Grey (Busy)**.
-
-This approach ensures clear communication of slot status, prevents double booking, and maintains transparency for both patients and doctors.
-
-
-
-### **Error Handling**
-
-| **Failure Case** | **System Action** | **Message Displayed** |
-|------------------|------------------|------------------------|
-| Slot already booked | Backend rejects request | “Slot unavailable, please choose another time.” |
-| Invalid input | Validation fails | “Invalid details. Please retry.” |
-| Network issue | Retry or fail-safe | “Network error. Please try again later.” |
-
-## **6. FUC-05 – Approve/Reject Appointment (Doctor)**
-**Description**
-Doctors review incoming requests and either approve, reject, or suggest new timings.
-```mermaid
-flowchart TD
-    A["Doctor Opens Dashboard"] --> B["Views Pending Requests"]
-    B --> C{"Any Conflicts or Priorities?"}
-    C -->|No| D["Approve Appointment"]
-    C -->|Yes| E["Reject and show alert message *'Sorry, the doctor is busy with an emergency case. Please book another available time.'* to patient dashboard"]
-    D --> F["Update Status = Approved and Patient side slot color = Green"]
-    E --> G["Update Status = Rejected and slot color = Grey (BUSY)"]
-    F --> H["Update Patient"]
-    G --> H
-    H --> I["Appointment List Updated in DB"]
-```
-## **7. FUC-06 – Cancel Appointment (Patient)**
+## **5. FUC-06 – Cancel Appointment (Patient)**
 **Description**
 Patient cancels a scheduled appointment before consultation.
 ```mermaid
@@ -139,6 +75,6 @@ flowchart TD
     E --> F["Update Doctor"]
     F --> G["Patient Sees Updated Schedule"]
 ```
-## **8. Summary**
+## **7. Summary**
 MediLink’s functional use cases provide the backbone of the system, enabling smooth user system interactions through secure, validated, and automated processes.
 Each function directly supports a corresponding business use case, ensuring that operational goals such as improved efficiency, reduced workload, and better patient satisfaction are achieved through reliable technical execution.

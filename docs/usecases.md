@@ -87,13 +87,14 @@ flowchart TD
     K --> L{"Any Priority Task at Requested Time?"}
 
     L -->|No| M["Approve Appointment"]
-    L -->|Yes| N["Reject Request and send alert message *'Sorry, the doctor is busy with an emergency case. Please book another available time.'*"]
+    L -->|Yes| N["status=Reject"]
 
     M --> O{"Database Update Successful?"}
     O -->|Yes| P["Update Status = Approved"]
     O -->|No| Q["Rollback Transaction and Show Error Message"]
 
-    P --> S["Notify Patient: Appointment Confirmed"]
+
+    P --> S["dashboard update"]
     N --> S
 
     Q --> U["Log Error for Admin Review"]

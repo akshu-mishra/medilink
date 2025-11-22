@@ -22,6 +22,7 @@ nav:
       - Test Plan: technical/test.md
       - Doctor Slot Management: technical/doctor_slot.md
       - Appointment Booking: technical/appointment_booking.md
+  - Test Report: Testreports.md
       
 
 plugins:

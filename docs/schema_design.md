@@ -89,16 +89,7 @@ erDiagram
 %% INDEX: patient_id (patient appointment history)
 %% INDEX: doctor_id (doctor appointment list)
 %% INDEX: slot_id (prevent double-booking)
-	prescriptions {
-		int id PK "auto-increment"  
-		int appointment_id FK "index(appointment_id)"    
-		text diagnosis  ""  
-		text consultation_details  ""  
-		text doctor_notes(optional)  ""  
-		timestamp created_at  ""  
-		timestamp updated_at  ""  
-		timestamp deleted_at  ""  
-    }
+	
 %% INDEX: appointment_id (fetch prescription fast)
 	users||--o{user_roles:"assigned"
 	roles||--o{user_roles:"maps"
@@ -107,7 +98,7 @@ erDiagram
 	doctors||--o{slots:"creates"
 	doctors||--o{appointments:"receives"
 	patients||--o{appointments:"books"
-	appointments||--o{prescriptions:"generates"
+	appointments||--||slots:"have"
 ```
 
 

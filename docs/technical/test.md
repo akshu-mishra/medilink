@@ -2,35 +2,28 @@
 
 ## **1. Introduction**
 
-This test plan outlines the testing strategy for the **MediLink Backend**, covering core modules such as authentication, authorization, appointments, user management, and doctor–patient workflows. The primary goal is to ensure API reliability, correctness, security, and smooth integration of key features.
-
+This test plan outlines the testing strategy for the MediLink Backend, covering core modules such as authentication, authorization, appointments, user management, and doctor–patient workflows. The primary goal is to ensure API reliability, correctness, security, vulnerability-free operation, and smooth integration of all features.
 
 ## **2. Objectives**
 
 * Validate that all core APIs work as expected.
 * Ensure correct behavior of JWT authentication & role-based authorization.
 * Verify accuracy of DB operations across all modules.
-* Identify bugs early and maintain backend stability.
+* Identify bugs and vulnerabilities early.
+* Integrate security scanning (Trivy + Semgrep) into the development cycle.
 * Confirm that API responses follow the intended schema.
-
 
 ## **3. Scope**
 
 ### **In Scope**
 
 * Unit tests for:
-
-  * User signup/login
-  * JWT access & refresh tokens
-  * Role-based routes (admin/doctor/patient)
-  * CRUD operations for doctors, patients, slots, appointments
-
-### **Out of Scope**
-
-* Frontend tests
-* UI/UX validation
-* Load/performance testing
-
+    * Signup, login
+    * JWT access & refresh tokens
+    * Role-based routes
+    * CRUD for doctors, patients, slots, appointments
+* Static security analysis (Semgrep)
+* Secrets & config scanning (Trivy Privy)
 
 ## **4. Test Items**
 
@@ -63,10 +56,6 @@ Components to be tested:
 * Test complete API workflows using FastAPI TestClient.
 * Validate status codes, response bodies, and permission handling.
 
-### **Smoke Testing**
-
-* Ensure server starts without errors.
-
 
 ## **6. Test Environment**
 
@@ -79,8 +68,6 @@ Components to be tested:
   * pytest-cov
   * HTTPX TestClient
 * **Dependencies:** Installed from `requirements.txt`
-
-
 
 ## **7. Test Data**
 
@@ -162,11 +149,3 @@ Testing will be considered complete when:
 | Token expiry during long tests   | Mock expiry or override timers          |
 | Unstable external components     | Mock external services                  |
 | Role mismatch or privilege leaks | Strict testing of permission middleware |
-
-
-
-## **11. Deliverables**
-
-* Test scripts under `/tests`
-* Coverage report (`pytest --cov`)
-* Final test summary document
